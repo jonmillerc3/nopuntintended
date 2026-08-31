@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Draft Day Recap — No Punt Intended</title>
+<meta name="description" content="No Punt Intended: draft day recap, fake awards, and way-too-early record projections.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #0c2340;
+    --bg-deep: #071627;
+    --bg-card: #123256;
+    --chalk: #f5f7fa;
+    --chalk-dim: #a9bdd4;
+    --marker: #ffc20e;
+    --marker-dim: #c99b0b;
+    --flag: #d1495b;
+    --pos: #8fbf8a;
+    --hash: rgba(245,247,250,0.14);
+    --hash-strong: rgba(245,247,250,0.28);
+    --radius: 6px;
+    --display: 'Anton', 'Arial Narrow', sans-serif;
+    --body: 'Work Sans', -apple-system, sans-serif;
+    --mono: 'JetBrains Mono', 'Courier New', monospace;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0; background:var(--bg); color:var(--chalk); font-family:var(--body); line-height:1.6; -webkit-font-smoothing:antialiased;}
+  a{color:var(--marker);}
+  .wrap{max-width:820px; margin:0 auto; padding:0 24px;}
+
+  nav{background:rgba(7,22,39,0.92); border-bottom:1px solid var(--hash); padding:14px 0;}
+  nav .wrap{display:flex; justify-content:space-between; align-items:center;}
+  .nav-mark{font-family:var(--display); font-size:1.1rem; color:var(--marker);}
+  nav a.back{font-family:var(--mono); font-size:0.72rem; letter-spacing:1px; text-transform:uppercase; text-decoration:none; color:var(--chalk-dim);}
+  nav a.back:hover{color:var(--marker);}
+
+  header.hero{padding:70px 24px 50px; text-align:center; border-bottom:1px solid var(--hash);}
+  .eyebrow{font-family:var(--mono); font-size:0.72rem; letter-spacing:3px; text-transform:uppercase; color:var(--marker); margin-bottom:16px;}
+  h1{font-family:var(--display); font-size:clamp(2.2rem,7vw,3.6rem); margin:0 0 16px; letter-spacing:0.5px;}
+  .dek{color:var(--chalk-dim); max-width:560px; margin:0 auto; font-size:1.05rem;}
+
+  section{padding:56px 0; border-bottom:1px solid var(--hash);}
+  h2.section-title{font-family:var(--display); font-size:1.9rem; letter-spacing:0.4px; margin:0 0 8px;}
+  .section-sub{color:var(--chalk-dim); margin:0 0 32px; max-width:560px;}
+
+  .team-post{margin-bottom:38px; padding-bottom:38px; border-bottom:1px solid var(--hash);}
+  .team-post:last-child{margin-bottom:0; padding-bottom:0; border-bottom:none;}
+  .team-post h3{font-family:var(--display); font-size:1.4rem; margin:0 0 4px; letter-spacing:0.3px;}
+  .team-post .manager{font-family:var(--mono); font-size:0.7rem; color:var(--chalk-dim); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:14px;}
+  .keeper-line{
+    font-family:var(--mono); font-size:0.78rem; color:var(--marker-dim);
+    background:var(--bg-deep); border:1px solid var(--hash); border-radius:4px;
+    padding:8px 12px; margin-bottom:14px; display:inline-block;
+  }
+  .team-post p{margin:0; font-size:0.98rem;}
+
+  .award-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:18px;}
+  .award-card{background:var(--bg-card); border:1px solid var(--hash); border-radius:var(--radius); padding:20px;}
+  .award-card .a-name{font-family:var(--display); font-size:1.1rem; color:var(--marker); margin-bottom:6px; letter-spacing:0.3px;}
+  .award-card .a-winner{font-family:var(--mono); font-size:0.78rem; color:var(--chalk); margin-bottom:8px;}
+  .award-card p{margin:0; font-size:0.9rem; color:var(--chalk-dim);}
+
+  table.proj{width:100%; border-collapse:collapse; margin-top:10px;}
+  table.proj th{font-family:var(--mono); font-size:0.68rem; letter-spacing:1px; text-transform:uppercase; color:var(--marker-dim); text-align:left; padding:10px 8px; border-bottom:1px solid var(--hash-strong);}
+  table.proj td{padding:12px 8px; border-bottom:1px solid var(--hash); font-size:0.92rem;}
+  table.proj td.rec{font-family:var(--mono); font-weight:700; color:var(--marker);}
+  table.proj tr:first-child td{color:var(--chalk);}
+  .disclaimer{font-family:var(--mono); font-size:0.72rem; color:var(--chalk-dim); margin-top:20px; font-style:normal;}
+
+  footer{padding:40px 24px; text-align:center;}
+  footer p{font-family:var(--mono); font-size:0.72rem; color:var(--chalk-dim);}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap"><div class="nav-mark">NPI</div><a class="back" href="index.html">&larr; Back to league home</a></div></nav>
+
+<header class="hero">
+  <div class="eyebrow">DRAFT DAY RECAP</div>
+  <h1>Money Was Spent. Regrets Were Made.</h1>
+  <p class="dek">Ten managers, one auction, and a salary cap that at least one of you apparently forgot existed. Here's what happened.</p>
+</header>
+
+<section id="teams">
+  <div class="wrap">
+    <h2 class="section-title">Team by Team</h2>
+    <p class="section-sub">In no particular order, because ranking these before a single game has been played would be its own kind of dumb.</p>
+
+    <div class="team-post">
+      <h3>Estes Park Rangers</h3>
+      <div class="manager">Jon Miller · Defending Champion</div>
+      <div class="keeper-line">Kept: Jahmyr Gibbs $41 · Chris Olave $8 · Parker Washington $1</div>
+      <p>The defending champion doubled down at running back, adding Derrick Henry ($46) and Ashton Jeanty ($32) to a room that already had Jahmyr Gibbs. Three feature-caliber backs on one roster is either the blueprint for a repeat or a very expensive bye-week headache waiting to happen. DeVonta Smith ($31) gives the passing game a real WR1, which matters, because outside of him and Christian Watson the receiver room is thin enough to see through.</p>
+    </div>
+
+    <div class="team-post">
+      <h3>Hawkeye Inside Her</h3>
+      <div class="manager">David Eickholt</div>
+      <div class="keeper-line">Kept: Ja'Marr Chase $62 · Amon-Ra St. Brown $53 · Jonathan Taylor $27</div>
+      <p>Spent $142 of the budget on three keepers before the draft even opened, then filled the rest of the roster with whatever was left standing. Chase, St. Brown, and Taylor is as good a top three as exists anywhere in this league, but the depth chart behind them reads like a waiver wire. Also worth noting: rostered Jordan Love for a dollar. A Packers fan taking a flier on the Packers quarterback for a buck is either loyalty or an addiction, and it's probably both.</p>
+    </div>
+
+    <div class="team-post">
+      <h3>ThunderFunk</h3>
+      <div class="manager">Tom Ksobiech</div>
+      <div class="keeper-line">Kept: Colston Loveland $1 · Brock Bowers $2 · De'Von Achane $27</div>
+      <p>Kept Colston Loveland for a single dollar, which might be the best value on any roster in this league, then added Brock Bowers behind him, giving ThunderFunk two elite tight ends and not a ton of proven help throwing them the ball outside of Drake London. Also somehow rostered both Patrick Mahomes and Dak Prescott for $6 apiece, a quarterback room built entirely out of the bargain bin.</p>
+    </div>
+
+    <div class="team-post">
+      <h3>Bear Force One</h3>
+      <div class="manager">Chris Shipley</div>
+      <div class="keeper-line">Kept: Josh Allen $29 · Bijan Robinson $56 · Kyle Pitts Sr. $4</div>
+      <p>Paid $56 to keep Bijan Robinson, tied for the single biggest number anyone put on a player all offseason, then kept spending, adding a second unproven rookie back in Jeremiah Love for $26. If both hit, this is the best roster in the league. If either one doesn't, it's a very expensive lesson about the rookie basket.</p>
+    </div>
+
+    <div class="team-post">
+      <h3>Manatt Mixers</h3>
+      <div class="manager">jon manatt</div>
+      <div class="keeper-line">Kept: George Pickens $18 · Rashee Rice $13 · Trey McBride $8</div>
+      <p>Built a genuinely deep receiver room around Pickens, Rice, Malik Nabers, and Garrett Wilson, then spent what was left on a running back committee nobody will remember by Thanksgiving. Jalen Hurts gives them a rushing floor at quarterback most teams here don't have. Last year's volatility didn't get any less volatile. It just got more expensive.</p>
+    </div>
+
+    <div class="team-post">
+      <h3>Sloan</h3>
+      <div class="manager">Eric Sloan</div>
+      <div class="keeper-line">Kept: Omarion Hampton $27 · Emeka Egbuka $12 · Chase Brown $3</div>
+      <p>Paid $56 for Puka Nacua, the other half of this year's biggest-bid tie, and built a receiver room deep enough to field two starting lineups: Nacua, CeeDee Lamb, Terry McLaurin, Zay Flowers, Egbuka. The running back room behind Hampton is Jordan Mason and a prayer.</p>
+    </div>
+
+    <div class="team-post">
+      <h3>Sam LaPortaPottys</h3>
+      <div class="manager">Josh Ostrem</div>
+      <div class="keeper-line">Kept: Kyren Williams $17 · Chris Godwin Jr. $4 · Drake Maye $3</div>
+      <p>Spent big on a genuine three-headed monster in Saquon Barkley ($45), A.J. Brown ($37), and Nico Collins ($35), which is a legitimately strong foundation.</p>
+    </div>
+
+    <div class="team-post">
+      <h3>Auction Drafts are Dumb</h3>
+      <div class="manager">Dan Welter</div>
+      <div class="keeper-line">Kept: Bo Nix $1 · James Cook III $17 · Jaxon Smith-Njigba $40</div>
+      <p>Landed Christian McCaffrey for $46 and kept Jaxon Smith-Njigba for $40, a strong top of the roster. Then, in the single funniest sentence in this entire recap, finished the draft with $37 in unspent salary cap. A team named "Auction Drafts are Dumb" left more money on the table than several other rosters spent on their entire bench combined. The format was never the dumb part.</p>
+    </div>
+
+    <div class="team-post">
+      <h3>Cooper Dejean Jacket</h3>
+      <div class="manager">Mike Stout</div>
+      <div class="keeper-line">Kept: Cam Skattebo $6 · Matthew Stafford $1 · Ladd McConkey $5</div>
+      <p>Assembled maybe the deepest receiver room in the league: Justin Jefferson, Davante Adams, Rome Odunze, Jameson Williams, McConkey. Genuinely impressive. The running back room is Skattebo, Bhayshul Tuten, Kyle Monangai, and MarShawn Lloyd, a committee with no clear lead back, which is a real problem in a league that will not stop needing running backs.</p>
+    </div>
+
+    <div class="team-post">
+      <h3>WE WIN RINGS</h3>
+      <div class="manager">Lawrence Moffett</div>
+      <div class="keeper-line">Kept: Justin Herbert $5 · Jaylen Waddle $12 · Travis Etienne Jr. $5</div>
+      <p>Two straight seasons in the basement bought exactly zero humility. WE WIN RINGS quietly built the most balanced roster in the league: two startable quarterbacks in Herbert and Lamar Jackson, a real running back room in Breece Hall, Quinshon Judkins, and Etienne, and a receiver corps led by Waddle and Tee Higgins. On paper, this is a top-three team. On the actual scoreboard, it's WE WIN RINGS, so treat all of the above with appropriate suspicion.</p>
+    </div>
+  </div>
+</section>
+
+<section id="awards">
+  <div class="wrap">
+    <h2 class="section-title">The Not-Actually-Official Draft Awards</h2>
+    <p class="section-sub">No trophy, no cash value, no basis in reality beyond a spreadsheet. Fully deserved anyway.</p>
+
+    <div class="award-grid">
+      <div class="award-card">
+        <div class="a-name">Best Overall Value</div>
+        <div class="a-winner">Colston Loveland — $1 (ThunderFunk)</div>
+        <p>An ascending young tight end for a single dollar. Somewhere, an ESPN default bid of $0 is laughing at everyone who overpaid at the position.</p>
+      </div>
+      <div class="award-card">
+        <div class="a-name">Left Money on the Table</div>
+        <div class="a-winner">Auction Drafts are Dumb — $37 unspent</div>
+        <p>A team named after how dumb auction drafts are just proved the format works fine when you actually use the whole budget.</p>
+      </div>
+      <div class="award-card">
+        <div class="a-name">Keeper Tax Bracket</div>
+        <div class="a-winner">Hawkeye Inside Her — $142 on three keepers</div>
+        <p>Spent more on keeping three players than four other teams spent building their entire rosters. Chase and St. Brown better both stay healthy.</p>
+      </div>
+      <div class="award-card">
+        <div class="a-name">Committee Meeting Award</div>
+        <div class="a-winner">Cooper Dejean Jacket</div>
+        <p>Four running backs, zero clear starters. Skattebo, Tuten, Monangai, and Lloyd are going to need a group chat just to sort out touches.</p>
+      </div>
+      <div class="award-card">
+        <div class="a-name">Biggest Bid of the Draft</div>
+        <div class="a-winner">Bijan Robinson &amp; Puka Nacua — $56 each</div>
+        <p>Bear Force One and Sloan both blinked at exactly the same number. Neither one is allowed to complain if the other guy's pick busts first.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projections" style="border-bottom:none;">
+  <div class="wrap">
+    <h2 class="section-title">Way-Too-Early Record Projections</h2>
+    <p class="section-sub">14-game regular season. Pure gut feel off the rosters above, worth exactly as much as any preseason prediction is worth, which is nothing.</p>
+
+    <table class="proj">
+      <tr><th>Team</th><th>Projected</th><th>Why</th></tr>
+      <tr><td>Bear Force One</td><td class="rec">10-4</td><td>Deepest, most balanced roster in the league if the two rookie backs hold up.</td></tr>
+      <tr><td>WE WIN RINGS</td><td class="rec">9-5</td><td>Quietly the best-constructed team in the league. Two years of results say don't trust it anyway.</td></tr>
+      <tr><td>ThunderFunk</td><td class="rec">9-5</td><td>Best regular season record two years running. History says it stalls out again in the semis.</td></tr>
+      <tr><td>Estes Park Rangers</td><td class="rec">8-6</td><td>Elite running back room, thin at receiver. Defending champion, no free pass.</td></tr>
+      <tr><td>Hawkeye Inside Her</td><td class="rec">8-6</td><td>Highest ceiling in the league at the top, lowest floor everywhere else.</td></tr>
+      <tr><td>Sam LaPortaPottys</td><td class="rec">7-7</td><td>Real top three, shaky at quarterback and tight end.</td></tr>
+      <tr><td>Auction Drafts are Dumb</td><td class="rec">7-7</td><td>Strong foundation, undermined by leaving $37 on the table.</td></tr>
+      <tr><td>Manatt Mixers</td><td class="rec">6-8</td><td>Deep at receiver, running backs are a coin flip every week.</td></tr>
+      <tr><td>Sloan</td><td class="rec">6-8</td><td>Best receiver room in the league on paper, one Hampton injury from disaster.</td></tr>
+      <tr><td>Cooper Dejean Jacket</td><td class="rec">5-9</td><td>Loaded at receiver, no real answer at running back.</td></tr>
+    </table>
+    <p class="disclaimer">// projections generated with zero accountability and will be quoted back at me the first week they're wrong</p>
+  </div>
+</section>
+
+<footer>
+  <p>NO PUNT INTENDED &middot; Draft Day Recap</p>
+</footer>
+
+</body>
+</html>
