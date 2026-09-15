@@ -59,13 +59,19 @@
   }
   nav .wrap{display:flex; align-items:center; justify-content:space-between; padding:14px 24px;}
   .nav-mark{font-family:var(--display); font-size:1.15rem; letter-spacing:0.5px; color:var(--marker);}
-  .nav-links{display:flex; gap:22px; list-style:none; margin:0; padding:0;}
+  .nav-links{display:flex; gap:22px; list-style:none; margin:0; padding:0; flex-wrap:wrap; justify-content:flex-end;}
   .nav-links a{
     font-family:var(--mono); font-size:0.72rem; letter-spacing:1px;
     text-transform:uppercase; text-decoration:none; color:var(--chalk-dim);
     transition:color .15s ease;
   }
   .nav-links a:hover{color:var(--marker);}
+
+  @media (max-width:760px){
+    nav .wrap{align-items:flex-start; gap:12px;}
+    .nav-links{gap:10px 14px; justify-content:flex-start;}
+  }
+
 
   /* ---------- HERO ---------- */
   header.hero{
@@ -247,6 +253,9 @@
   <div class="wrap">
     <div class="nav-mark">NPI</div>
     <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="preseason.html">Preseason</a></li>
+      <li><a href="week-1.html">Week 1</a></li>
       <li><a href="#standings">Standings</a></li>
       <li><a href="#playoffs">Playoffs</a></li>
       <li><a href="#preview">Preview</a></li>
@@ -691,11 +700,11 @@
       <p class="section-sub">Sarcastic, a little mean, and aimed at every manager equally. Fresh recap drops after Monday Night Football each week.</p>
     </div>
 
-    <div class="recap-empty reveal">
-      <div class="icon">—</div>
-      <h3>Week 1 recap not chalked up yet</h3>
-      <p>Nobody has lost a game on a kicker's missed extra point yet, so there's nothing to mock. Check back after Week 1 wraps.</p>
-    </div>
+    <a href="week-1.html" class="recap-empty reveal" style="display:block;text-decoration:none;color:inherit;">
+      <div class="icon">01</div>
+      <h3>Week 1 — The Receipts Have Begun</h3>
+      <p>The opening week is in the books. Five winners, five losers, one 177-point eruption, and the first preseason takes already being dragged into evidence. Click to read the full recap.</p>
+    </a>
   </div>
 </section>
 
