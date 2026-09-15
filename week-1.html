@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 1 Recap — No Punt Intended</title>
+<meta name="description" content="No Punt Intended Week 1 recap: matchup breakdowns, awards, receipts, and power rankings.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0c2340;
+    --bg-deep:#071627;
+    --bg-card:#123256;
+    --chalk:#f5f7fa;
+    --chalk-dim:#a9bdd4;
+    --marker:#ffc20e;
+    --marker-dim:#c99b0b;
+    --flag:#d1495b;
+    --pos:#8fbf8a;
+    --hash:rgba(245,247,250,0.14);
+    --hash-strong:rgba(245,247,250,0.28);
+    --radius:6px;
+    --display:'Anton','Arial Narrow',sans-serif;
+    --body:'Work Sans',-apple-system,sans-serif;
+    --mono:'JetBrains Mono','Courier New',monospace;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--chalk);font-family:var(--body);line-height:1.68;-webkit-font-smoothing:antialiased;}
+  a{color:var(--marker);}
+  .wrap{max-width:860px;margin:0 auto;padding:0 24px;}
+  nav{background:rgba(7,22,39,.95);border-bottom:1px solid var(--hash);padding:14px 0;position:sticky;top:0;z-index:10;backdrop-filter:blur(7px);}
+  nav .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;}
+  .nav-mark{font-family:var(--display);font-size:1.1rem;color:var(--marker);}
+  .nav-links{display:flex;gap:18px;flex-wrap:wrap;justify-content:flex-end;}
+  .nav-links a{font-family:var(--mono);font-size:.7rem;letter-spacing:1px;text-transform:uppercase;text-decoration:none;color:var(--chalk-dim);}
+  .nav-links a:hover,.nav-links a.active{color:var(--marker);}
+
+  header.hero{padding:72px 24px 54px;text-align:center;border-bottom:1px solid var(--hash);background:linear-gradient(180deg,rgba(7,22,39,.55),rgba(12,35,64,0));}
+  .eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:3px;text-transform:uppercase;color:var(--marker);margin-bottom:14px;}
+  h1{font-family:var(--display);font-size:clamp(2.5rem,7vw,4.3rem);margin:0 0 12px;letter-spacing:.5px;}
+  .dek{color:var(--chalk-dim);max-width:650px;margin:0 auto;font-size:1.05rem;}
+
+  section{padding:58px 0;border-bottom:1px solid var(--hash);}
+  h2.section-title{font-family:var(--display);font-size:2rem;letter-spacing:.4px;margin:0 0 8px;}
+  .section-sub{color:var(--chalk-dim);margin:0 0 34px;max-width:650px;}
+
+  .lead{font-size:1.05rem;}
+  .lead p{margin:0 0 18px;}
+
+  .matchup{margin-bottom:44px;padding-bottom:44px;border-bottom:1px solid var(--hash);}
+  .matchup:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none;}
+  .scoreline{font-family:var(--display);font-size:1.55rem;line-height:1.2;margin:0 0 16px;}
+  .scoreline span{color:var(--marker);}
+  .matchup p{margin:0 0 16px;font-size:.99rem;}
+  .final{font-family:var(--mono);font-size:.79rem;color:var(--marker);margin-top:18px!important;}
+  .emph{font-weight:700;color:var(--chalk);}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;}
+  .card{background:var(--bg-card);border:1px solid var(--hash);border-radius:var(--radius);padding:20px;}
+  .card .kicker{font-family:var(--display);font-size:1.12rem;color:var(--marker);margin-bottom:6px;letter-spacing:.2px;}
+  .card .winner{font-family:var(--mono);font-size:.76rem;color:var(--chalk);margin-bottom:10px;}
+  .card p{margin:0;color:var(--chalk-dim);font-size:.92rem;}
+
+  .receipt{padding:20px 0;border-bottom:1px solid var(--hash);}
+  .receipt:last-child{border-bottom:none;padding-bottom:0;}
+  .receipt h3{font-family:var(--display);font-size:1.25rem;margin:0 0 8px;}
+  .receipt p{margin:6px 0;font-size:.96rem;}
+  .label{font-family:var(--mono);font-size:.7rem;letter-spacing:.6px;text-transform:uppercase;color:var(--marker-dim);}
+
+  table.rank{width:100%;border-collapse:collapse;margin-top:10px;}
+  table.rank th{font-family:var(--mono);font-size:.68rem;letter-spacing:1px;text-transform:uppercase;color:var(--marker-dim);text-align:left;padding:10px 8px;border-bottom:1px solid var(--hash-strong);}
+  table.rank td{padding:13px 8px;border-bottom:1px solid var(--hash);font-size:.92rem;vertical-align:top;}
+  table.rank td.num{font-family:var(--mono);font-weight:700;color:var(--marker);width:42px;}
+  table.rank td.team{font-weight:700;white-space:nowrap;}
+  table.rank td.record{font-family:var(--mono);color:var(--chalk-dim);white-space:nowrap;}
+
+  .closing{font-size:1.03rem;}
+  .closing p{margin:0 0 16px;}
+  .note{font-family:var(--mono);font-size:.72rem;color:var(--chalk-dim);margin-top:20px;}
+
+  footer{padding:42px 24px;text-align:center;}
+  footer p{font-family:var(--mono);font-size:.72rem;color:var(--chalk-dim);}
+
+  @media (max-width:700px){
+    nav .wrap{align-items:flex-start;flex-direction:column;}
+    .nav-links{justify-content:flex-start;gap:12px 16px;}
+    table.rank th:nth-child(4),table.rank td:nth-child(4){display:none;}
+    table.rank td.team{white-space:normal;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="nav-mark">NPI</div>
+    <div class="nav-links">
+      <a href="index.html">League Home</a>
+      <a href="preseason.html">Preseason</a>
+      <a href="week-1.html" class="active">Week 1</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="eyebrow">REGULAR SEASON · WEEK 1</div>
+  <h1>The Receipts Have Begun</h1>
+  <p class="dek">Five games, five winners, five losers, and exactly one week before the preseason takes started getting dragged into evidence.</p>
+</header>
+
+<section>
+  <div class="wrap lead">
+    <p>One week.</p>
+    <p>That is all it took for several portions of the preseason analysis to become either remarkably prescient or potentially embarrassing.</p>
+    <p>The defending champion opened the season by scoring <strong>177.12 points</strong>, nearly 23 more than anyone else in the league. Bear Force One looked very much like the contender it was advertised to be. Sam LaPortaPottys scored the third-most points in the league and lost anyway. ThunderFunk, coming off consecutive dominant regular seasons, opened with 101.46. And Cooper Dejean Jacket discovered that having Justin Jefferson score 31 points is considerably less useful when approximately half the rest of the lineup decides not to participate.</p>
+    <p>Five teams are 1-0. Five teams are 0-1.</p>
+    <p>Obviously, therefore, the season is basically over and we now know everything.</p>
+  </div>
+</section>
+
+<section id="matchups">
+  <div class="wrap">
+    <h2 class="section-title">Week 1 Matchups</h2>
+    <p class="section-sub">The games, the damage, and the first evidence that preseason confidence should always come with an expiration date.</p>
+
+    <article class="matchup">
+      <div class="scoreline">Estes Park Rangers <span>177.12</span> · WE WIN RINGS <span>107.26</span></div>
+      <p><strong>The defending champion apparently took the preseason criticism personally.</strong></p>
+      <p>The preseason concern with Estes Park was pretty straightforward: ridiculous running backs, questionable receiver depth.</p>
+      <p>The running backs responded by scoring <strong>101.6 points</strong> among Jahmyr Gibbs, Derrick Henry and Ashton Jeanty.</p>
+      <p>Gibbs went for 33.6. Henry scored 35.3. Jeanty added 32.7.</p>
+      <p>That is obscene.</p>
+      <p>Then Chris Olave, one of the players supposedly responsible for that questionable receiver room, dropped another <strong>28.2</strong>, while $1 keeper Parker Washington contributed 19.3.</p>
+      <p>Estes scored 177.12 despite getting <strong>negative 0.38 points from Kyler Murray</strong>.</p>
+      <p>Read that sentence again.</p>
+      <p>The quarterback actually subtracted points from the roster, and the Rangers still beat WE WIN RINGS by almost seventy.</p>
+      <p>For Lawrence Moffett, this was not exactly the debut expected from the team we called one of the most balanced rosters in the league. Breece Hall delivered 19.8 and DJ Moore scored 21, but Jaylen Waddle produced 1.2, Tee Higgins managed 8.9, and Justin Herbert finished at 13.26.</p>
+      <p>There are losses you analyze. There are losses you learn from. And then there are losses where the other guy scores 177 and you just close the app.</p>
+      <p class="final">FINAL · ESTES PARK RANGERS 177.12, WE WIN RINGS 107.26</p>
+    </article>
+
+    <article class="matchup">
+      <div class="scoreline">Bear Force One <span>154.16</span> · Sam LaPortaPottys <span>141.92</span></div>
+      <p>The best game of Week 1 also produced its cruelest result.</p>
+      <p>Sam LaPortaPottys scored <strong>141.92 points</strong>, the third-highest total in the entire league.</p>
+      <p>Their reward was an 0-1 record.</p>
+      <p>Josh Ostrem got 28.9 from David Montgomery, 27.8 from Isaiah Likely, 21.2 from Nico Collins and 15.5 from Kyren Williams. Even kicker Tyler Loop added 14.</p>
+      <p>Under normal circumstances, that is enough.</p>
+      <p>Unfortunately, Chris Shipley had Josh Allen.</p>
+      <p>Allen scored <strong>35.66</strong>, Bijan Robinson added <strong>31.3</strong>, Bucky Irving put up 20.3 and Mike Evans contributed 16.9 as Bear Force One reached 154.16.</p>
+      <p>The interesting part is that Bear did this while Kyle Pitts scored <strong>zero points</strong>.</p>
+      <p>The preseason writeup said that if Bear Force One's young running backs hit, this might be the best roster in the league. One week is nowhere near enough evidence to make that declaration, but Jeremiah Love produced 13 and Bucky Irving 20.3 behind Bijan's 31.3.</p>
+      <p>So far, so good.</p>
+      <p>Meanwhile, Sam LaPortaPottys gets the first official entry into the <strong>Fantasy Football Is Stupid</strong> file: score 141.92, outscore eight teams in the league, start 0-1.</p>
+      <p class="final">FINAL · BEAR FORCE ONE 154.16, SAM LAPORTAPOTTYS 141.92</p>
+    </article>
+
+    <article class="matchup">
+      <div class="scoreline">Sloan <span>138.10</span> · Daejon Loves <span>114.64</span></div>
+      <p>Eric Sloan spent the offseason building what we called perhaps the deepest receiver room in the league.</p>
+      <p>Week 1 offered supporting evidence.</p>
+      <p>Zay Flowers led the way with <strong>26 points</strong>, while CeeDee Lamb scored 15.4, Puka Nacua 12.4 and Emeka Egbuka 11.3. None of them individually destroyed the scoreboard, but collectively the depth did exactly what depth is supposed to do.</p>
+      <p>More importantly, Chase Brown delivered 18.8 and Brock Purdy contributed 21.1, giving Sloan enough production outside the receiver position to cruise to 138.10.</p>
+      <p>Dan Welter's Daejon Loves had its moments. Jaxon Smith-Njigba scored <strong>26.2</strong>, the Steelers defense somehow contributed 19, and Christian McCaffrey gave him 13.8.</p>
+      <p>But James Cook's 9.9, Tony Pollard's 4.4 and Baker Mayfield's 11.64 left too much ground to make up.</p>
+      <p>This was not a catastrophic performance from Daejon Loves. At 114.64, Dan would have beaten three other teams this week. He simply ran into a better roster. But hey, he still has all that left over salary cap money from the draft and you don't, so...scoreboard?</p>
+      <p class="final">FINAL · SLOAN 138.10, DAEJON LOVES 114.64</p>
+    </article>
+
+    <article class="matchup">
+      <div class="scoreline">Manatt Mixers <span>136.02</span> · Cooper Dejean Jacket <span>92.20</span></div>
+      <p>The preseason diagnosis for both of these teams was almost comically simple.</p>
+      <p>Manatt had receivers and questionable running backs.</p>
+      <p>Cooper Dejean Jacket had receivers and questionable running backs.</p>
+      <p>Naturally, Manatt won because of a running back.</p>
+      <p>Javonte Williams scored <strong>24.2 points</strong>, joining Jalen Hurts at 24.72 and Trey McBride at 24.5 to give Jon Manatt three players above 24 points.</p>
+      <p>The rest of the lineup did enough, and the Chiefs defense chipped in 14.</p>
+      <p>Mike Stout, meanwhile, received exactly what he paid for from the top of his receiver room. Justin Jefferson scored <strong>31.2</strong> and Ladd McConkey added 19.2.</p>
+      <p>After that, things became unpleasant.</p>
+      <p>Matthew Stafford: 4.1. George Kittle: 3.2. Davante Adams: 5.6. Courtland Sutton: 3.1. MarShawn Lloyd: 3.7. Texans defense: <strong>minus four</strong>.</p>
+      <p>There should probably be a special fantasy rule that if your defense scores negative four points, you are permitted to simply remove them from the lineup and pretend the entire thing never happened.</p>
+      <p>Cooper Dejean Jacket finished with <strong>92.2</strong>, the lowest score in the league.</p>
+      <p>The preseason concern was whether this roster had enough production outside of its receivers.</p>
+      <p>Week 1 answer: Not yet.</p>
+      <p class="final">FINAL · MANATT MIXERS 136.02, COOPER DEJEAN JACKET 92.20</p>
+    </article>
+
+    <article class="matchup">
+      <div class="scoreline">Hawkeye Inside Her <span>122.26</span> · ThunderFunk <span>101.46</span></div>
+      <p>This one may have produced the strangest box score of the week.</p>
+      <p>ThunderFunk got <strong>34.1 points from Kenneth Walker</strong>.</p>
+      <p>And still barely broke 100.</p>
+      <p>That takes work.</p>
+      <p>Drake London scored 5.5. Marvin Harrison Jr. scored 4.3. Colston Loveland scored zero. The Rams defense added one. De'Von Achane finished at 10.6.</p>
+      <p>For a team that has posted the league's best regular-season record in each of the last two seasons, this was not an especially comforting beginning.</p>
+      <p>David Eickholt didn't exactly receive universal excellence from Hawkeye Inside Her either. Ja'Marr Chase scored just <strong>3.2</strong>, Darren Waller had 4.8 and J.K. Dobbins managed 3.6.</p>
+      <p>But this is why you spend enormous portions of your salary cap on stars.</p>
+      <p>Amon-Ra St. Brown scored <strong>28.7</strong>. Jonathan Taylor scored <strong>25.1</strong>. The Seahawks defense added 14.</p>
+      <p>That was enough.</p>
+      <p>The preseason criticism of Hawkeye Inside Her was that the top of the roster might be as good as anyone's while the depth behind it could become a problem.</p>
+      <p>Week 1 was almost a laboratory demonstration of the idea. One superstar disappeared, two others carried the team, and David walked away 1-0.</p>
+      <p class="final">FINAL · HAWKEYE INSIDE HER 122.26, THUNDERFUNK 101.46</p>
+    </article>
+  </div>
+</section>
+
+<section id="awards">
+  <div class="wrap">
+    <h2 class="section-title">Week 1 Awards</h2>
+    <p class="section-sub">No trophy, no ceremony, and absolutely no appeals process.</p>
+    <div class="grid">
+      <div class="card">
+        <div class="kicker">The "Are You Kidding Me?" Award</div>
+        <div class="winner">Sam LaPortaPottys</div>
+        <p>141.92 points. Third-highest score in the league. 0-1. Fantasy football remains an exceptionally well-designed activity.</p>
+      </div>
+      <div class="card">
+        <div class="kicker">The Nuclear Launch Award</div>
+        <div class="winner">Estes Park Rangers</div>
+        <p>177.12 points, and the quarterback scored negative points. That is less a fantasy lineup than an OSHA violation.</p>
+      </div>
+      <div class="card">
+        <div class="kicker">Three-Headed Monster Award</div>
+        <div class="winner">Gibbs · Henry · Jeanty</div>
+        <p>33.6 + 35.3 + 32.7 = 101.6 points from three running backs. The rest of the league may wish to monitor this situation.</p>
+      </div>
+      <div class="card">
+        <div class="kicker">The "One Guy Tried" Award</div>
+        <div class="winner">Kenneth Walker · ThunderFunk</div>
+        <p>34.1 points while the team finished with 101.46. Walker accounted for roughly one-third of ThunderFunk's entire offense.</p>
+      </div>
+      <div class="card">
+        <div class="kicker">The Minus-Four Masterpiece Award</div>
+        <div class="winner">Houston Texans D/ST · Cooper Dejean Jacket</div>
+        <p>Minus four points. An impressive accomplishment considering defenses are generally intended to help your score.</p>
+      </div>
+      <div class="card">
+        <div class="kicker">Best Losing Performance</div>
+        <div class="winner">Sam LaPortaPottys · 141.92</div>
+        <p>This one isn't close.</p>
+      </div>
+      <div class="card">
+        <div class="kicker">Worst Winning Performance</div>
+        <div class="winner">Hawkeye Inside Her · 122.26</div>
+        <p>Somebody had to win the award. David will undoubtedly accept it while pointing to the only statistic that matters: 1-0.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="receipts">
+  <div class="wrap">
+    <h2 class="section-title">The First Receipts</h2>
+    <p class="section-sub">Preseason predictions should never disappear. They should be preserved so everyone can be mocked later.</p>
+
+    <div class="receipt">
+      <h3>Estes Park Rangers</h3>
+      <p><span class="label">Preseason concern</span><br>Elite running backs, questionable receiver depth.</p>
+      <p><span class="label">Week 1</span><br>The three featured backs scored 101.6 points, while Chris Olave and Parker Washington combined for another 47.5.</p>
+      <p><span class="label">Verdict</span><br><strong>Concern temporarily tabled.</strong></p>
+    </div>
+
+    <div class="receipt">
+      <h3>Bear Force One</h3>
+      <p><span class="label">Preseason take</span><br>Potentially the best roster in the league if the running backs deliver.</p>
+      <p><span class="label">Week 1</span><br>154.16 points and the league's second-highest score.</p>
+      <p><span class="label">Verdict</span><br><strong>No reason to retract anything yet.</strong></p>
+    </div>
+
+    <div class="receipt">
+      <h3>WE WIN RINGS</h3>
+      <p><span class="label">Preseason take</span><br>Perhaps the most balanced roster in the league and a top-three team on paper.</p>
+      <p><span class="label">Week 1</span><br>107.26.</p>
+      <p><span class="label">Verdict</span><br><strong>The paper has been placed in a drawer until further notice.</strong></p>
+    </div>
+
+    <div class="receipt">
+      <h3>ThunderFunk</h3>
+      <p><span class="label">Preseason reputation</span><br>Best regular-season record two years running.</p>
+      <p><span class="label">Week 1</span><br>101.46.</p>
+      <p><span class="label">Verdict</span><br><strong>Please remain calm. Probably.</strong></p>
+    </div>
+
+    <div class="receipt">
+      <h3>Cooper Dejean Jacket</h3>
+      <p><span class="label">Preseason concern</span><br>Outstanding receivers, serious running-back questions.</p>
+      <p><span class="label">Week 1</span><br>92.20 and last place.</p>
+      <p><span class="label">Verdict</span><br><strong>The prosecution has entered Exhibit A.</strong></p>
+    </div>
+  </div>
+</section>
+
+<section id="power-rankings" style="border-bottom:none;">
+  <div class="wrap">
+    <h2 class="section-title">Way-Too-Early Power Rankings</h2>
+    <p class="section-sub">After exactly one week of evidence, which is obviously enough to make sweeping conclusions.</p>
+    <table class="rank">
+      <tr><th>#</th><th>Team</th><th>Record / PF</th><th>Why</th></tr>
+      <tr><td class="num">1</td><td class="team">Estes Park Rangers</td><td class="record">1-0 · 177.12</td><td>Until somebody else scores 177, there isn't much argument.</td></tr>
+      <tr><td class="num">2</td><td class="team">Bear Force One</td><td class="record">1-0 · 154.16</td><td>The preseason contender looked like one immediately.</td></tr>
+      <tr><td class="num">3</td><td class="team">Sloan</td><td class="record">1-0 · 138.10</td><td>Deep, balanced and without an obvious Week 1 disaster anywhere in the lineup.</td></tr>
+      <tr><td class="num">4</td><td class="team">Manatt Mixers</td><td class="record">1-0 · 136.02</td><td>Javonte Williams producing 24.2 changes the complexion of this roster considerably if it continues.</td></tr>
+      <tr><td class="num">5</td><td class="team">Sam LaPortaPottys</td><td class="record">0-1 · 141.92</td><td>Yes, an 0-1 team belongs above a 1-0 team. Score 142 points and you have my attention. Josh simply got schedule-screwed.</td></tr>
+      <tr><td class="num">6</td><td class="team">Hawkeye Inside Her</td><td class="record">1-0 · 122.26</td><td>Survived 3.2 from Ja'Marr Chase. That's actually encouraging.</td></tr>
+      <tr><td class="num">7</td><td class="team">Daejon Loves</td><td class="record">0-1 · 114.64</td><td>Not terrible. Not particularly frightening yet either.</td></tr>
+      <tr><td class="num">8</td><td class="team">WE WIN RINGS</td><td class="record">0-1 · 107.26</td><td>The roster still looks better than the Week 1 result. Unfortunately, fantasy football awards no points for roster aesthetics.</td></tr>
+      <tr><td class="num">9</td><td class="team">ThunderFunk</td><td class="record">0-1 · 101.46</td><td>A shocking opening performance from a team accustomed to living near the top of the standings.</td></tr>
+      <tr><td class="num">10</td><td class="team">Cooper Dejean Jacket</td><td class="record">0-1 · 92.20</td><td>Justin Jefferson cannot be expected to personally operate an entire franchise.</td></tr>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="wrap closing">
+    <h2 class="section-title">What We Actually Learned</h2>
+    <p>Probably very little.</p>
+    <p>It is Week 1.</p>
+    <p>That's worth remembering before anyone trades half his roster because one player scored four points.</p>
+    <p>But Week 1 does give us our first pieces of evidence. Estes' absurd running-back investment immediately paid off. Bear Force One looks dangerous. Sloan's receiver depth appears real. Manatt may have more running-back production than expected. Sam LaPortaPottys is considerably better than its 0-1 record suggests.</p>
+    <p>And at the bottom, ThunderFunk and WE WIN RINGS have enough talent that writing either off after one game would be ridiculous.</p>
+    <p>Cooper Dejean Jacket?</p>
+    <p>We'll revisit that one next week.</p>
+    <p class="note">// receipts will be preserved for future prosecution</p>
+  </div>
+</section>
+
+<footer>
+  <p>NO PUNT INTENDED · WEEK 1 · 2026</p>
+</footer>
+
+</body>
+</html>
