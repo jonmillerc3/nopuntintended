@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>No Punt Intended — Fantasy Football League</title>
-<meta name="description" content="No Punt Intended: ESPN full PPR keeper league. Standings, playoffs, rules, and weekly recaps nobody asked for.">
+<meta name="description" content="No Punt Intended: ESPN full PPR keeper league. Current standings through Week 2, results, rules, and weekly recaps nobody asked for.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
@@ -243,23 +243,28 @@
   footer{padding:44px 24px; text-align:center;}
   footer p{font-family:var(--mono); font-size:0.72rem; color:var(--chalk-dim); letter-spacing:0.5px;}
   footer .mark{color:var(--marker);}
+
+/* Shared navigation: update all pages together for each weekly edition. */
+nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px}
+nav .nav-mark{text-decoration:none;font-family:var(--display);color:var(--marker)}
+nav .site-links{display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:18px}
+nav .site-links a,nav .site-links summary{font-family:var(--mono);font-size:.7rem;letter-spacing:1px;text-transform:uppercase;text-decoration:none;color:var(--chalk-dim)}
+nav .site-links a:hover,nav .site-links a[aria-current="page"],nav .site-links .recaps-current>summary{color:var(--marker)}
+nav .recaps-menu{position:relative}nav .recaps-menu summary{cursor:pointer;list-style:none;padding:6px 0}nav .recaps-menu summary::-webkit-details-marker{display:none}nav .recaps-menu summary::after{content:' ▾';color:var(--marker)}
+nav .recaps-menu[open] summary::after{content:' ▴'}
+nav .recaps-options{position:absolute;right:0;top:100%;min-width:180px;display:flex;flex-direction:column;gap:0;padding:8px;background:var(--bg-deep);border:1px solid var(--hash-strong);border-radius:var(--radius);box-shadow:0 10px 24px #0005;z-index:101}
+nav .recaps-options a{display:block;padding:10px 12px;white-space:nowrap}nav .recaps-options a:hover{background:var(--bg-card)}
+nav a:focus-visible,nav summary:focus-visible{outline:2px solid var(--marker);outline-offset:4px}
+section[id]{scroll-margin-top:110px}.reveal{opacity:1;transform:none}
+.recap-empty+.recap-empty{margin-top:20px}.latest-link{display:inline-block;margin:24px 0 0;padding:10px 18px;border:1px solid var(--marker);border-radius:var(--radius);color:var(--marker);text-decoration:none;font-family:var(--mono);font-size:.8rem}
+.week-results{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}.week-result{background:var(--bg-card);border:1px solid var(--hash);border-radius:var(--radius);padding:18px}.week-result p{display:flex;justify-content:space-between;gap:14px;margin:6px 0}.week-result strong{font-family:var(--mono);white-space:nowrap}.week-result .winner strong{color:var(--marker)}
+@media(max-width:700px){nav .wrap{flex-direction:column;align-items:flex-start;gap:8px}nav .site-links{justify-content:flex-start;gap:8px 16px}nav .recaps-menu{position:static}nav .recaps-options{right:24px;left:auto;top:100%}section[id]{scroll-margin-top:160px}.scorebug{max-width:100%}.scorebug .info{min-width:0}.scorebug .tag{flex-shrink:0}}
+
 </style>
 </head>
 <body>
 
-<nav>
-  <div class="wrap">
-    <div class="nav-mark">NPI</div>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="preseason.html">Preseason</a></li>
-      <li><a href="week-1.html">Week 1</a></li>
-      <li><a href="#standings">Standings</a></li>
-      <li><a href="#rules">Rules</a></li>
-      <li><a href="#recaps">Recaps</a></li>
-    </ul>
-  </div>
-</nav>
+<nav aria-label="Main navigation"><div class="wrap"><a class="nav-mark" href="index.html" aria-label="No Punt Intended home">NPI</a><div class="site-links"><a href="index.html" aria-current="page">Home</a><a href="preseason.html">Preseason</a><a href="index.html#standings">Standings</a><a href="index.html#rules">Rules</a><details class="recaps-menu"><summary>Recaps</summary><div class="recaps-options"><a href="week-2.html">Week 2</a><a href="week-1.html">Week 1</a><a href="index.html#recaps">All recaps</a></div></details></div></div></nav>
 
 <header class="hero">
   <div class="wrap">
@@ -270,7 +275,7 @@
       <div class="tag">Defending Champ</div>
       <div class="info">
         <div class="champ">Estes Park Rangers</div>
-        <div class="manager">Jon Miller · 9-5-0 · Best point diff in the league</div>
+        <div class="manager">Jon Miller · 2-0 · 336.80 PF through Week 2</div>
       </div>
     </div>
   </div>
@@ -282,30 +287,31 @@
     <div class="section-head reveal">
       <div class="num">01 / 2026 STANDINGS</div>
       <h2 class="section-title">Current Standings</h2>
-      <p class="section-sub">One week in, which means the table is already telling the truth except where it absolutely is not.</p>
+      <p class="section-sub">Through Week 2 · 2026 season. Four teams at 2-0, two at 1-1, and four at 0-2. Ordered by record, then points scored.</p>
     </div>
 
     <ul class="standings-list">
-      <li class="standings-row rk-1 reveal"><div class="rk">01</div><div class="team-block"><div class="team-name">Estes Park Rangers</div><div class="manager">Jon Miller</div><div class="roast">The defending champion opened with 177.12 points, which is a needlessly aggressive way to begin a title defense.</div></div><div class="stat-block"><div class="rec">1-0</div><div>PF 177.12</div></div></li>
-      <li class="standings-row reveal"><div class="rk">02</div><div class="team-block"><div class="team-name">Bear Force One</div><div class="manager">Chris Shipley</div><div class="roast">Second-highest score in the league and exactly the kind of Week 1 performance that encourages dangerous levels of optimism.</div></div><div class="stat-block"><div class="rec">1-0</div><div>PF 154.16</div></div></li>
-      <li class="standings-row reveal"><div class="rk">03</div><div class="team-block"><div class="team-name">Sloan</div><div class="manager">Eric Sloan</div><div class="roast">Deep, balanced, and immediately annoying to play against.</div></div><div class="stat-block"><div class="rec">1-0</div><div>PF 138.10</div></div></li>
-      <li class="standings-row reveal"><div class="rk">04</div><div class="team-block"><div class="team-name">Manatt Mixers</div><div class="manager">jon manatt</div><div class="roast">Won comfortably and, for at least one week, has running-back production nobody was expecting.</div></div><div class="stat-block"><div class="rec">1-0</div><div>PF 136.02</div></div></li>
-      <li class="standings-row reveal"><div class="rk">05</div><div class="team-block"><div class="team-name">Hawkeye Inside Her</div><div class="manager">David Eickholt</div><div class="roast">Survived a quiet Ja'Marr Chase week because apparently having other stars is useful.</div></div><div class="stat-block"><div class="rec">1-0</div><div>PF 122.26</div></div></li>
-      <li class="standings-row reveal"><div class="rk">06</div><div class="team-block"><div class="team-name">Sam LaPortaPottys</div><div class="manager">Josh Ostrem</div><div class="roast">Scored 141.92, third-most in the league, and is somehow 0-1. Fantasy football remains a serious sport.</div></div><div class="stat-block"><div class="rec">0-1</div><div>PF 141.92</div></div></li>
-      <li class="standings-row reveal"><div class="rk">07</div><div class="team-block"><div class="team-name">Daejon Loves</div><div class="manager">Dan Welter</div><div class="roast">A respectable opening score. Also still in possession of all that leftover auction money, which continues to be worth exactly zero fantasy points.</div></div><div class="stat-block"><div class="rec">0-1</div><div>PF 114.64</div></div></li>
-      <li class="standings-row reveal"><div class="rk">08</div><div class="team-block"><div class="team-name">WE WIN RINGS</div><div class="manager">Lawrence Moffett</div><div class="roast">The roster still looks better than the result. The standings, unfortunately, do not care.</div></div><div class="stat-block"><div class="rec">0-1</div><div>PF 107.26</div></div></li>
-      <li class="standings-row reveal"><div class="rk">09</div><div class="team-block"><div class="team-name">ThunderFunk</div><div class="manager">Tom Ksobiech</div><div class="roast">One bad week after two dominant regular seasons. Nobody panic. Yet.</div></div><div class="stat-block"><div class="rec">0-1</div><div>PF 101.46</div></div></li>
-      <li class="standings-row reveal"><div class="rk">10</div><div class="team-block"><div class="team-name">Cooper Dejean Jacket</div><div class="manager">Mike Stout</div><div class="roast">Justin Jefferson showed up. Several coworkers apparently did not.</div></div><div class="stat-block"><div class="rec">0-1</div><div>PF 92.20</div></div></li>
-    </ul>
+<li class="standings-row rk-1"><div class="rk">01</div><div class="team-block"><div class="team-name">Estes Park Rangers</div><div class="manager">Jon Miller</div><div class="roast">Two wins, 336.80 points, and another 27.7 from DeVonta Smith left on the bench. Apparently this is what depth looks like.</div></div><div class="stat-block"><div class="rec">2-0</div><div>PF 336.80 · PA 230.92</div></div></li>
+<li class="standings-row"><div class="rk">02</div><div class="team-block"><div class="team-name">Sloan</div><div class="manager">Eric Sloan</div><div class="roast">2-0 and second in scoring. The deep receiver room is making the preseason analysis look annoyingly sensible.</div></div><div class="stat-block"><div class="rec">2-0</div><div>PF 295.78 · PA 226.14</div></div></li>
+<li class="standings-row"><div class="rk">03</div><div class="team-block"><div class="team-name">Hawkeye Inside Her</div><div class="manager">David Eickholt</div><div class="roast">165.68 in Week 2. When Chase, Amon-Ra and Taylor all show up, the depth debate gets very quiet.</div></div><div class="stat-block"><div class="rec">2-0</div><div>PF 287.94 · PA 231.84</div></div></li>
+<li class="standings-row"><div class="rk">04</div><div class="team-block"><div class="team-name">Bear Force One</div><div class="manager">Chris Shipley</div><div class="roast">Josh Allen supplied 40.82 of 122.02. The record says 2-0; it does not ask who did the carrying.</div></div><div class="stat-block"><div class="rec">2-0</div><div>PF 276.18 · PA 246.74</div></div></li>
+<li class="standings-row"><div class="rk">05</div><div class="team-block"><div class="team-name">Daejon Loves</div><div class="manager">Dan Welter</div><div class="roast">A league-high 168.58 in Week 2. Apparently the unused $37 was earning interest.</div></div><div class="stat-block"><div class="rec">1-1</div><div>PF 283.22 · PA 202.22</div></div></li>
+<li class="standings-row"><div class="rk">06</div><div class="team-block"><div class="team-name">Manatt Mixers</div><div class="manager">Jon Manatt</div><div class="roast">From 136.02 to 104.82. One strong opener, one disappearing offense, and plenty left to prove.</div></div><div class="stat-block"><div class="rec">1-1</div><div>PF 240.84 · PA 214.22</div></div></li>
+<li class="standings-row"><div class="rk">07</div><div class="team-block"><div class="team-name">ThunderFunk</div><div class="manager">Tom Ksobiech</div><div class="roast">An improved 123.66 still left ThunderFunk 0-2. The receiver room needs to join the season.</div></div><div class="stat-block"><div class="rec">0-2</div><div>PF 225.12 · PA 281.94</div></div></li>
+<li class="standings-row"><div class="rk">08</div><div class="team-block"><div class="team-name">Cooper Dejean Jacket</div><div class="manager">Mike Stout</div><div class="roast">130.38 was a major improvement. Unfortunately, the opponent brought 165.68.</div></div><div class="stat-block"><div class="rec">0-2</div><div>PF 222.58 · PA 301.70</div></div></li>
+<li class="standings-row"><div class="rk">09</div><div class="team-block"><div class="team-name">WE WIN RINGS</div><div class="manager">Lawrence Moffett</div><div class="roast">0-2 with a league-high 334.80 points against. Bad luck explains part of it; 218.76 points scored explains the rest.</div></div><div class="stat-block"><div class="rec">0-2</div><div>PF 218.76 · PA 334.80</div></div></li>
+<li class="standings-row"><div class="rk">10</div><div class="team-block"><div class="team-name">Sam LaPortaPottys</div><div class="manager">Josh Ostrem</div><div class="roast">141.92 one week. 64.12 the next. Fantasy football has range.</div></div><div class="stat-block"><div class="rec">0-2</div><div>PF 206.04 · PA 322.74</div></div></li>
+</ul>
   </div>
 </section>
 
 
 
+<section id="week-2-results"><div class="wrap"><div class="section-head"><div class="num">02 / WEEK 2 FINAL SCORES</div><h2 class="section-title">The Latest Damage</h2><p class="section-sub">Daejon Loves led the week with 168.58. Four teams remain undefeated.</p></div><div class="week-results"><div class="week-result"><p class="winner"><span>Estes Park Rangers</span><strong>159.68</strong></p><p><span>ThunderFunk</span><strong>123.66</strong></p></div><div class="week-result"><p class="winner"><span>Hawkeye Inside Her</span><strong>165.68</strong></p><p><span>Cooper Dejean Jacket</span><strong>130.38</strong></p></div><div class="week-result"><p class="winner"><span>Bear Force One</span><strong>122.02</strong></p><p><span>Manatt Mixers</span><strong>104.82</strong></p></div><div class="week-result"><p class="winner"><span>Daejon Loves</span><strong>168.58</strong></p><p><span>Sam LaPortaPottys</span><strong>64.12</strong></p></div><div class="week-result"><p class="winner"><span>Sloan</span><strong>157.68</strong></p><p><span>WE WIN RINGS</span><strong>111.50</strong></p></div></div><a class="latest-link" href="week-2.html">Read the full Week 2 recap →</a></div></section>
 <section id="rules">
   <div class="wrap">
     <div class="section-head reveal">
-      <div class="num">02 / THE FINE PRINT</div>
+      <div class="num">03 / THE FINE PRINT</div>
       <h2 class="section-title">House Rules</h2>
       <p class="section-sub">Read it now so nobody can pretend they didn't know in Week 12.</p>
     </div>
@@ -336,11 +342,12 @@
 <section id="recaps" style="border-bottom:none;">
   <div class="wrap">
     <div class="section-head reveal">
-      <div class="num">03 / WEEKLY RECAPS</div>
+      <div class="num">04 / WEEKLY RECAPS</div>
       <h2 class="section-title">The Recaps Nobody Asked For</h2>
       <p class="section-sub">Sarcastic, a little mean, and aimed at every manager equally. Fresh recap drops after Monday Night Football each week.</p>
     </div>
 
+    <a href="week-2.html" class="recap-empty" style="display:block;text-decoration:none;color:inherit;"><div class="icon">02 · LATEST</div><h3>Week 2 — Turns Out One Week Wasn't Enough Evidence</h3><p>Four unbeaten teams, a 168.58-point response from Dan, and fresh evidence against the preseason predictions. All five matchups, awards, receipts, and updated power rankings.</p></a>
     <a href="week-1.html" class="recap-empty reveal" style="display:block;text-decoration:none;color:inherit;">
       <div class="icon">01</div>
       <h3>Week 1 — The Receipts Have Begun</h3>
@@ -363,5 +370,10 @@
   revealEls.forEach(el=>io.observe(el));
 </script>
 
+<script>
+// Native details supports mouse, touch, and keyboard without depending on JavaScript.
+document.addEventListener('click',function(event){document.querySelectorAll('.recaps-menu[open]').forEach(function(menu){if(!menu.contains(event.target))menu.open=false;});});
+document.addEventListener('keydown',function(event){if(event.key==='Escape'){document.querySelectorAll('.recaps-menu[open]').forEach(function(menu){menu.open=false;menu.querySelector('summary').focus();});}});
+</script>
 </body>
 </html>
