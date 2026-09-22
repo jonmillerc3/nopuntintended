@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 2 Recap — No Punt Intended</title>
+<meta name="description" content="No Punt Intended Week 2 recap: matchup breakdowns, awards, receipts, and power rankings.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0c2340;
+    --bg-deep:#071627;
+    --bg-card:#123256;
+    --chalk:#f5f7fa;
+    --chalk-dim:#a9bdd4;
+    --marker:#ffc20e;
+    --marker-dim:#c99b0b;
+    --flag:#d1495b;
+    --pos:#8fbf8a;
+    --hash:rgba(245,247,250,0.14);
+    --hash-strong:rgba(245,247,250,0.28);
+    --radius:6px;
+    --display:'Anton','Arial Narrow',sans-serif;
+    --body:'Work Sans',-apple-system,sans-serif;
+    --mono:'JetBrains Mono','Courier New',monospace;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--chalk);font-family:var(--body);line-height:1.68;-webkit-font-smoothing:antialiased;}
+  a{color:var(--marker);}
+  .wrap{max-width:860px;margin:0 auto;padding:0 24px;}
+  nav{background:rgba(7,22,39,.95);border-bottom:1px solid var(--hash);padding:14px 0;position:sticky;top:0;z-index:10;backdrop-filter:blur(7px);}
+  nav .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;}
+  .nav-mark{font-family:var(--display);font-size:1.1rem;color:var(--marker);}
+  .nav-links{display:flex;gap:18px;flex-wrap:wrap;justify-content:flex-end;}
+  .nav-links a{font-family:var(--mono);font-size:.7rem;letter-spacing:1px;text-transform:uppercase;text-decoration:none;color:var(--chalk-dim);}
+  .nav-links a:hover,.nav-links a.active{color:var(--marker);}
+
+  header.hero{padding:72px 24px 54px;text-align:center;border-bottom:1px solid var(--hash);background:linear-gradient(180deg,rgba(7,22,39,.55),rgba(12,35,64,0));}
+  .eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:3px;text-transform:uppercase;color:var(--marker);margin-bottom:14px;}
+  h1{font-family:var(--display);font-size:clamp(2.5rem,7vw,4.3rem);margin:0 0 12px;letter-spacing:.5px;}
+  .dek{color:var(--chalk-dim);max-width:650px;margin:0 auto;font-size:1.05rem;}
+
+  section{padding:58px 0;border-bottom:1px solid var(--hash);}
+  h2.section-title{font-family:var(--display);font-size:2rem;letter-spacing:.4px;margin:0 0 8px;}
+  .section-sub{color:var(--chalk-dim);margin:0 0 34px;max-width:650px;}
+
+  .lead{font-size:1.05rem;}
+  .lead p{margin:0 0 18px;}
+
+  .matchup{margin-bottom:44px;padding-bottom:44px;border-bottom:1px solid var(--hash);}
+  .matchup:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none;}
+  .scoreline{font-family:var(--display);font-size:1.55rem;line-height:1.2;margin:0 0 16px;}
+  .scoreline span{color:var(--marker);}
+  .matchup p{margin:0 0 16px;font-size:.99rem;}
+  .final{font-family:var(--mono);font-size:.79rem;color:var(--marker);margin-top:18px!important;}
+  .emph{font-weight:700;color:var(--chalk);}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;}
+  .card{background:var(--bg-card);border:1px solid var(--hash);border-radius:var(--radius);padding:20px;}
+  .card .kicker{font-family:var(--display);font-size:1.12rem;color:var(--marker);margin-bottom:6px;letter-spacing:.2px;}
+  .card .winner{font-family:var(--mono);font-size:.76rem;color:var(--chalk);margin-bottom:10px;}
+  .card p{margin:0;color:var(--chalk-dim);font-size:.92rem;}
+
+  .receipt{padding:20px 0;border-bottom:1px solid var(--hash);}
+  .receipt:last-child{border-bottom:none;padding-bottom:0;}
+  .receipt h3{font-family:var(--display);font-size:1.25rem;margin:0 0 8px;}
+  .receipt p{margin:6px 0;font-size:.96rem;}
+  .label{font-family:var(--mono);font-size:.7rem;letter-spacing:.6px;text-transform:uppercase;color:var(--marker-dim);}
+
+  table.rank{width:100%;border-collapse:collapse;margin-top:10px;}
+  table.rank th{font-family:var(--mono);font-size:.68rem;letter-spacing:1px;text-transform:uppercase;color:var(--marker-dim);text-align:left;padding:10px 8px;border-bottom:1px solid var(--hash-strong);}
+  table.rank td{padding:13px 8px;border-bottom:1px solid var(--hash);font-size:.92rem;vertical-align:top;}
+  table.rank td.num{font-family:var(--mono);font-weight:700;color:var(--marker);width:42px;}
+  table.rank td.team{font-weight:700;white-space:nowrap;}
+  table.rank td.record{font-family:var(--mono);color:var(--chalk-dim);white-space:nowrap;}
+
+  .closing{font-size:1.03rem;}
+  .closing p{margin:0 0 16px;}
+  .note{font-family:var(--mono);font-size:.72rem;color:var(--chalk-dim);margin-top:20px;}
+
+  footer{padding:42px 24px;text-align:center;}
+  footer p{font-family:var(--mono);font-size:.72rem;color:var(--chalk-dim);}
+
+  @media (max-width:700px){
+    nav .wrap{align-items:flex-start;flex-direction:column;}
+    .nav-links{justify-content:flex-start;gap:12px 16px;}
+    table.rank th:nth-child(4),table.rank td:nth-child(4){display:none;}
+    table.rank td.team{white-space:normal;}
+  }
+
+  /* Week 2: preserve the Week 1 template; keep every ranking visible on mobile. */
+  .nav-mark{text-decoration:none;flex-shrink:0}
+  .nav-links a[aria-current="page"]{color:var(--marker);border-bottom:2px solid var(--marker)}
+  h3.scoreline,h3.kicker{font-weight:400}
+  .card h3.kicker{margin:0 0 6px}.card p{margin:0 0 12px}.card p:last-child{margin-bottom:0}
+  .card .winner{margin-bottom:14px}
+  table.rank th{color:var(--chalk-dim)}table.rank td.team{white-space:normal;min-width:130px}
+  table.rank td.why p{margin:0 0 12px}table.rank td.why p:last-child{margin-bottom:0}
+  table.rank td.why{width:45%}.label{color:var(--chalk-dim)}
+  .skip-link{position:absolute;top:-100px;left:12px;background:var(--marker);color:var(--bg-deep);padding:10px 16px;z-index:100}
+  .skip-link:focus{top:12px}a:focus-visible{outline:2px solid var(--marker);outline-offset:4px}
+  .section-title{line-height:1.25}.footer-links{display:flex;justify-content:center;gap:24px;font-family:var(--mono);font-size:.75rem}
+  @media(max-width:700px){
+    table.rank,table.rank tbody,table.rank tr,table.rank td{display:block;width:100%}
+    table.rank thead{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+    table.rank tr{padding:20px 0;border-bottom:1px solid var(--hash)}
+    table.rank td{border:0;padding:3px 0}table.rank td.num{width:auto}
+    table.rank td.team{font-size:1.05rem}table.rank td.why:nth-child(4){display:block;width:100%;padding-top:12px}
+    header.hero{padding:50px 24px 42px}.grid{grid-template-columns:1fr}
+  }
+  @media print{nav,.skip-link,.footer-links{display:none}body{background:#fff;color:#000}.card{background:#fff}.card p,.card .winner,table.rank td.record{color:#222}section{padding:24px 0}.card{break-inside:avoid}}
+
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to recap</a>
+<nav aria-label="Main navigation"><div class="wrap"><a class="nav-mark" href="index.html" aria-label="No Punt Intended home">NPI</a><div class="nav-links"><a href="index.html">Home</a>
+<a href="preseason.html">Preseason</a>
+<a href="week-1.html">Week 1</a>
+<a href="week-2.html" class="active" aria-current="page">Week 2</a>
+<a href="index.html#standings">Standings</a>
+<a href="index.html#rules">Rules</a>
+<a href="index.html#recaps">Recaps</a></div></div></nav>
+<header class="hero"><div class="eyebrow">REGULAR SEASON · WEEK 2</div><h1>Turns Out One Week Wasn't Enough Evidence</h1><p class="dek">Matchup breakdowns, awards, receipts, and power rankings.</p></header>
+<main id="main"><section id="opening" aria-label="Opening column"><div class="wrap lead"><p>Two weeks into the season, the league has separated itself into three very distinct groups.</p>
+<p>Four teams are undefeated.</p>
+<p>Two are 1-1.</p>
+<p>Four have begun staring at the standings while telling themselves that 0-2 really isn&#x27;t that bad.</p>
+<p>The Estes Park Rangers followed a 177-point opening week with another 159.68 and remain comfortably atop the league in scoring. Sloan and Hawkeye Inside Her both put up monster weeks to stay perfect. Bear Force One somehow reached 2-0 without looking nearly as dominant as it did a week ago.</p>
+<p>And then there is Daejon Loves.</p>
+<p>Dan Welter spent the entire preseason getting mocked for leaving $37 of auction money unused, then responded in Week 2 by scoring more points than everybody else.</p>
+<p>The money is apparently still sitting there.</p>
+<p>So is the 168.58.</p>
+<p>This is inconvenient for the editorial staff.</p></div></section>
+<section id="matchups"><div class="wrap"><h2 class="section-title">Week 2 Matchups</h2>
+<article class="matchup"><h3 class="scoreline">Estes Park Rangers <span>159.68</span> · ThunderFunk <span>123.66</span></h3><p>At some point, this stops being a hot start.</p>
+<p>Estes Park followed its league-high <strong>177.12</strong> in Week 1 with <strong>159.68</strong> in Week 2, bringing the defending champion to <strong>336.80 points through two games</strong>.</p>
+<p>Nobody else is particularly close.</p>
+<p>The encouraging part for Jon Miller is that this wasn&#x27;t simply a replay of Week 1, when Jahmyr Gibbs, Derrick Henry and Ashton Jeanty combined for more than 100 points.</p>
+<p>This time the production came from everywhere.</p>
+<p>Tyler Shough scored 22.38. Gibbs had 23.3. Chris Olave scored 22.6. Dalton Kincaid added 22.5. Henry contributed 17.7, Parker Washington 16.8 and Christian Watson 14.1.</p>
+<p>Seven starters scored at least 14 points.</p>
+<p>And just to make the rest of the league more irritated, DeVonta Smith scored <strong>27.7 on the bench</strong>.</p>
+<p>That&#x27;s less a lineup problem than a luxury tax issue.</p>
+<p>ThunderFunk actually improved substantially from its 101.46-point opener. Dak Prescott scored 29.76, Kenneth Walker added 23.8 and Chase McLaughlin somehow contributed 16 from the kicker spot.</p>
+<p>It still wasn&#x27;t close enough.</p>
+<p>The biggest problem continues to be the receiver room. Drake London scored 8.9, Luther Burden III 6.2 and Marvin Harrison Jr. produced <strong>zero</strong>.</p>
+<p>Through two weeks, a team that finished near the top of this league in each of the last two regular seasons is now <strong>0-2</strong>.</p>
+<p>We have officially moved from “ignore Week 1” to “okay, maybe glance at it.”</p>
+<p class="final"><strong>Final: Estes Park Rangers 159.68, ThunderFunk 123.66</strong></p></article>
+<article class="matchup"><h3 class="scoreline">Hawkeye Inside Her <span>165.68</span> · Cooper Dejean Jacket <span>130.38</span></h3><p>Mike Stout scored 92.20 points in Week 1.</p>
+<p>So the good news is that Cooper Dejean Jacket improved by almost <strong>40 points</strong>.</p>
+<p>The bad news is that David Eickholt scored 165.68.</p>
+<p>Fantasy football is very supportive like that.</p>
+<p>Hawkeye Inside Her got the kind of performance its preseason roster construction was built to produce.</p>
+<p>Amon-Ra St. Brown scored <strong>35.2</strong>.</p>
+<p>Jonathan Taylor scored <strong>29.2</strong>.</p>
+<p>Ja&#x27;Marr Chase rebounded from his 3.2-point opening week with <strong>26.5</strong>.</p>
+<p>Jake Ferguson contributed another <strong>20.3</strong> from the flex.</p>
+<p>That is four players combining for 111.2 points before most of the roster even enters the conversation.</p>
+<p>David is now 2-0, and the preseason concern that an expensive top-heavy roster might lack depth suddenly matters a lot less when the expensive guys are doing this.</p>
+<p>Mike, meanwhile, deserves some sympathy.</p>
+<p>Davante Adams went absolutely nuclear for <strong>39.5 points</strong>, Matthew Stafford scored 26.98, and Cooper finished at a perfectly respectable 130.38.</p>
+<p>In six of the league&#x27;s other eight Week 2 team performances, that score would have looked very competitive.</p>
+<p>Instead, Mike ran into 165.</p>
+<p>Cooper Dejean Jacket is now 0-2, but this was considerably different from Week 1.</p>
+<p>Last week looked like a roster problem.</p>
+<p>This week looked like a schedule problem.</p>
+<p class="final"><strong>Final: Hawkeye Inside Her 165.68, Cooper Dejean Jacket 130.38</strong></p></article>
+<article class="matchup"><h3 class="scoreline">Bear Force One <span>122.02</span> · Manatt Mixers <span>104.82</span></h3><p>There are dominant 2-0 teams.</p>
+<p>There are fortunate 2-0 teams.</p>
+<p>And then there are teams whose quarterback scores 40.82 points and politely carries everyone else to the finish line.</p>
+<p>Welcome, Bear Force One.</p>
+<p>Josh Allen accounted for exactly one-third of Chris Shipley&#x27;s entire score, putting up <strong>40.82</strong> while the rest of the roster mostly behaved like they had dinner reservations.</p>
+<p>Bijan Robinson scored 11.1. Jeremiah Love had 7.5. Rhamondre Stevenson 3.6. Kyle Pitts 2.5.</p>
+<p>No problem.</p>
+<p>Harrison Butker kicked in 16, Tetairoa McMillan added 15.1, and Allen did the heavy lifting.</p>
+<p>Bear Force One is 2-0.</p>
+<p>Nobody asks how in December.</p>
+<p>Jon Manatt&#x27;s afternoon was considerably less enjoyable.</p>
+<p>The Mixers were projected for 142.5.</p>
+<p>They scored <strong>104.82</strong>.</p>
+<p>Caleb Williams produced 7.72. Malik Nabers scored 1.1. The Chiefs defense managed one point.</p>
+<p>Trey McBride, Garrett Wilson and Brandon Aubrey tried to keep things respectable, but there simply wasn&#x27;t enough production elsewhere.</p>
+<p>Jalen Hurts scored 16.16 on the bench, which looks annoying until you realize inserting him would still have left Manatt comfortably short.</p>
+<p>Sometimes there isn&#x27;t a lineup decision to blame.</p>
+<p>Sometimes your players just don&#x27;t score.</p>
+<p>Very inconsiderate.</p>
+<p class="final"><strong>Final: Bear Force One 122.02, Manatt Mixers 104.82</strong></p></article>
+<article class="matchup"><h3 class="scoreline">Daejon Loves <span>168.58</span> · Sam LaPortaPottys <span>64.12</span></h3><p>We need to discuss Dan Welter.</p>
+<p>Last week, after Daejon Loves scored 114.64 in a loss, we noted that Dan still had all that unused auction money from the draft.</p>
+<p>Very funny.</p>
+<p>Everybody laughed.</p>
+<p>Dan then scored <strong>168.58</strong>, the highest total in the league this week.</p>
+<p>Apparently the $37 was earning interest.</p>
+<p>Jaxon Smith-Njigba exploded for <strong>42.5 points</strong>. Jared Goff scored 29.78. Travis Kelce added 25.1. Christian McCaffrey contributed 22.6 and James Cook another 20.9.</p>
+<p>Five players above 20.</p>
+<p>That&#x27;ll do.</p>
+<p>Daejon Loves is only 1-1, but here&#x27;s the more interesting number:</p>
+<p><strong>283.22 points scored.</strong></p>
+<p>That&#x27;s fifth in the official standings because of record, but it&#x27;s actually more total offense than undefeated Bear Force One.</p>
+<p>Dan may have been mocked prematurely.</p>
+<p>Unfortunately, fantasy journalism provides no mechanism for retracting jokes.</p>
+<p>On the other side of the matchup...</p>
+<p>Good lord.</p>
+<p>Sam LaPortaPottys scored <strong>141.92 points in Week 1</strong> and lost.</p>
+<p>Josh Ostrem could reasonably have wondered what he needed to do to catch a break.</p>
+<p>The fantasy gods answered:</p>
+<p>“Score 64.”</p>
+<p>Drake Maye: 8.02.</p>
+<p>Saquon Barkley: 3.</p>
+<p>Nico Collins: zero.</p>
+<p>Alec Pierce: 2.1.</p>
+<p>David Montgomery: 4.4.</p>
+<p>Chargers defense: 4.</p>
+<p>The entire starting lineup combined for <strong>64.12 points</strong>.</p>
+<p>Daejon Loves had almost matched that by the time JSN, Goff and Kelce were finished.</p>
+<p>This wasn&#x27;t a bad beat.</p>
+<p>This was a crime scene with ESPN branding.</p>
+<p>Sam LaPortaPottys has gone from the <strong>third-highest scorer in Week 1</strong> to the <strong>lowest scorer in Week 2</strong>.</p>
+<p>Fantasy football has range.</p>
+<p class="final"><strong>Final: Daejon Loves 168.58, Sam LaPortaPottys 64.12</strong></p></article>
+<article class="matchup"><h3 class="scoreline">Sloan <span>157.68</span> · WE WIN RINGS <span>111.50</span></h3><p>Eric Sloan may be building the quietest problem in the league.</p>
+<p>Week 1: 138.10.</p>
+<p>Week 2: <strong>157.68</strong>.</p>
+<p>Record: 2-0.</p>
+<p>Total points: <strong>295.78</strong>, second only to Estes Park.</p>
+<p>CeeDee Lamb erupted for <strong>35.3</strong>, Brock Purdy scored 28.48, Rashod Bateman added 21.8, Sam LaPorta had 17.2 and Omarion Hampton 17.5.</p>
+<p>Even with Puka Nacua unavailable, Sloan barely noticed.</p>
+<p>That is exactly why having an absurdly deep receiver room matters.</p>
+<p>Lawrence Moffett, meanwhile, is reaching uncomfortable territory.</p>
+<p>WE WIN RINGS entered the season with what looked like one of the league&#x27;s most balanced rosters.</p>
+<p>It is now <strong>0-2</strong>.</p>
+<p>Jaylen Waddle had a strong 21.8, and Tee Higgins and Tyler Warren both delivered reasonable numbers.</p>
+<p>But Lamar Jackson scored only 14.8.</p>
+<p>Travis Etienne had 7.1.</p>
+<p>And DJ Moore accomplished one of fantasy football&#x27;s more impressive statistical achievements:</p>
+<p><strong>minus 0.1 points.</strong></p>
+<p>WE WIN RINGS has now allowed <strong>334.8 points through two weeks</strong>, the most in the league.</p>
+<p>So Lawrence has both underperformed and been run over by the schedule.</p>
+<p>Those things can coexist.</p>
+<p>The preseason roster analysis may eventually be vindicated.</p>
+<p>At the moment, however, the scoreboard has filed an objection.</p>
+<p class="final"><strong>Final: Sloan 157.68, WE WIN RINGS 111.50</strong></p></article>
+</div></section>
+<section id="awards"><div class="wrap"><h2 class="section-title">Week 2 Awards</h2>
+<div class="grid"><article class="card"><h3 class="kicker">The “Fine, Keep Your $37” Award</h3><div class="winner"><strong>Daejon Loves — 168.58</strong></div><p>We made fun of the unused auction budget.</p>
+<p>Dan responded with the week&#x27;s highest score.</p>
+<p>The editorial department will not be issuing an apology at this time.</p></article>
+<article class="card"><h3 class="kicker">From Penthouse to Outhouse</h3><div class="winner"><strong>Sam LaPortaPottys</strong></div><p>Week 1: <strong>141.92</strong></p>
+<p>Week 2: <strong>64.12</strong></p>
+<p>A decline of <strong>77.8 points</strong> in seven days.</p>
+<p>There are roller coasters with gentler drops.</p></article>
+<article class="card"><h3 class="kicker">The Luxury Problem Award</h3><div class="winner"><strong>Estes Park Rangers</strong></div><p>Scored 159.68.</p>
+<p>Also left <strong>27.7 points from DeVonta Smith</strong> on the bench.</p>
+<p>Most managers call that a mistake.</p>
+<p>At 2-0 with 336.8 points scored, Jon gets to call it “depth.”</p></article>
+<article class="card"><h3 class="kicker">The Backpack Award</h3><div class="winner"><strong>Josh Allen — Bear Force One</strong></div><p>40.82 of Bear Force One&#x27;s 122.02 points.</p>
+<p>Sometimes a team wins together.</p>
+<p>Sometimes Josh Allen grabs everybody by the collar and drags them across the finish line.</p></article>
+<article class="card"><h3 class="kicker">Best Performance in a Loss</h3><div class="winner"><strong>Cooper Dejean Jacket — 130.38</strong></div><p>Mike improved by nearly 40 points and got 39.5 from Davante Adams.</p>
+<p>His opponent scored 165.68.</p>
+<p>Thank you for playing.</p></article>
+<article class="card"><h3 class="kicker">The Negative Contribution Club</h3><div class="winner"><strong>DJ Moore — WE WIN RINGS</strong></div><p><strong>-0.1 points.</strong></p>
+<p>It takes a special kind of week to make your fantasy owner wish you had simply stayed home.</p></article>
+</div></div></section>
+<section id="receipts"><div class="wrap"><h2 class="section-title">Receipts — Week 2</h2>
+<div class="section-sub"><p>The preseason page remains public.</p>
+<p>This was a mistake.</p></div><article class="receipt"><h3>ESTES PARK RANGERS</h3><p><span class="label">Preseason concern:</span><br> Dominant running-back room, questionable receiver depth.</p>
+<p><span class="label">Two weeks later:</span><br> 336.80 points, most in the league. Chris Olave has already produced a 28.2-point week and a 22.6-point week, Parker Washington has scored 19.3 and 16.8, and DeVonta Smith just put up 27.7 from the bench.</p>
+<p><span class="label">Status:</span><br> The concern has been placed on administrative leave.</p></article>
+<article class="receipt"><h3>SLOAN</h3><p><span class="label">Preseason take:</span><br> Perhaps the deepest receiver room in the league, but questions at running back.</p>
+<p><span class="label">Two weeks later:</span><br> 2-0, second in league scoring, and receiving depth has already absorbed injuries without much trouble.</p>
+<p><span class="label">Status:</span><br> Looking annoyingly accurate.</p></article>
+<article class="receipt"><h3>BEAR FORCE ONE</h3><p><span class="label">Preseason take:</span><br> Could be the league&#x27;s best roster if the running backs held up.</p>
+<p><span class="label">Two weeks later:</span><br> 2-0.</p>
+<p>Week 2 wasn&#x27;t beautiful, but 2-0 doesn&#x27;t contain a style-points column.</p>
+<p><span class="label">Status:</span><br> Still alive and well.</p></article>
+<article class="receipt"><h3>HAWKEYE INSIDE HER</h3><p><span class="label">Preseason take:</span><br> Elite top end, scary lack of depth.</p>
+<p><span class="label">Two weeks later:</span><br> 2-0 after Chase, Amon-Ra and Taylor combined for 90.9 points in Week 2.</p>
+<p><span class="label">Status:</span><br> It turns out having elite players remains a viable strategy.</p></article>
+<article class="receipt"><h3>DAEJON LOVES</h3><p><span class="label">Preseason take:</span><br> Strong foundation weakened by leaving $37 in auction money unused.</p>
+<p><span class="label">Two weeks later:</span><br> 168.58 points and 283.22 total through two games.</p>
+<p><span class="label">Status:</span><br> We are declining further comment pending legal advice.</p></article>
+<article class="receipt"><h3>THUNDERFUNK</h3><p><span class="label">Preseason expectation:</span><br> Back-to-back excellent regular seasons suggested another contender.</p>
+<p><span class="label">Two weeks later:</span><br> 0-2.</p>
+<p><span class="label">Status:</span><br> The sample is no longer one game.</p>
+<p>Still early.</p>
+<p>But no longer one game.</p></article>
+<article class="receipt"><h3>WE WIN RINGS</h3><p><span class="label">Preseason take:</span><br> Quietly one of the league&#x27;s most balanced and best-constructed rosters.</p>
+<p><span class="label">Two weeks later:</span><br> 0-2, 218.76 points scored.</p>
+<p><span class="label">Status:</span><br> This take has requested protective custody.</p></article>
+<article class="receipt"><h3>COOPER DEJEAN JACKET</h3><p><span class="label">Preseason concern:</span><br> Great receivers, questionable running backs.</p>
+<p><span class="label">Two weeks later:</span><br> 0-2, but Week 2 produced a respectable 130.38.</p>
+<p><span class="label">Status:</span><br> Still concerning, but the defense would like Week 2 entered into evidence.</p></article>
+</div></section>
+<section id="power-rankings"><div class="wrap"><h2 class="section-title">Power Rankings</h2>
+<p class="section-sub">After Week 2</p><p>These are <strong>not the standings</strong>.</p>
+<p>Record matters. Scoring matters. Roster quality matters. Recent performance matters.</p>
+<p>And two weeks is still an absurdly small sample, which has never stopped us before.</p><table class="rank"><thead><tr><th scope="col">#</th><th scope="col">Team</th><th scope="col">Record / PF</th><th scope="col">Why</th></tr></thead><tbody><tr><td class="num">1</td><td class="team">Estes Park Rangers</td><td class="record">2-0<br><strong>336.80 PF</strong></td><td class="why"><p>No mystery here.</p>
+<p>Highest-scoring team in Week 1. Third-highest in Week 2. More than 40 points clear of the next-highest season total.</p>
+<p>Until somebody knocks them off, they&#x27;re No. 1.</p></td></tr>
+<tr><td class="num">2</td><td class="team">Sloan</td><td class="record">2-0<br><strong>295.78 PF</strong></td><td class="why"><p>The preseason receiver-depth argument is translating directly to the scoreboard.</p>
+<p>138.10 followed by 157.68.</p>
+<p>This is not a fluky 2-0.</p></td></tr>
+<tr><td class="num">3</td><td class="team">Hawkeye Inside Her</td><td class="record">2-0<br><strong>287.94 PF</strong></td><td class="why"><p>David&#x27;s stars did exactly what expensive stars are supposed to do in Week 2.</p>
+<p>If Chase, Amon-Ra and Taylor are simultaneously rolling, nobody will care how the bottom of the roster looks.</p></td></tr>
+<tr><td class="num">4</td><td class="team">Daejon Loves</td><td class="record">1-1<br><strong>283.22 PF</strong></td><td class="why"><p>Yes, a 1-1 team goes above an undefeated team.</p>
+<p>Dan has scored more points than Bear Force One and just posted the best score in the league.</p>
+<p>Power rankings are allowed to acknowledge that.</p>
+<p>Standings purists may send complaints to someone who cares.</p></td></tr>
+<tr><td class="num">5</td><td class="team">Bear Force One</td><td class="record">2-0<br><strong>276.18 PF</strong></td><td class="why"><p>The record is perfect.</p>
+<p>Week 1 was excellent.</p>
+<p>Week 2 required 40.82 from Josh Allen to survive a 104-point opponent.</p>
+<p>Still dangerous. Slightly less terrifying than seven days ago.</p></td></tr>
+<tr><td class="num">6</td><td class="team">Manatt Mixers</td><td class="record">1-1<br><strong>240.84 PF</strong></td><td class="why"><p>Week 2 was ugly.</p>
+<p>But one strong opener and one bad game don&#x27;t erase the roster yet.</p>
+<p>The concern is whether the Week 2 offensive disappearance was variance or foreshadowing.</p></td></tr>
+<tr><td class="num">7</td><td class="team">Cooper Dejean Jacket</td><td class="record">0-2<br><strong>222.58 PF</strong></td><td class="why"><p>This may look strange.</p>
+<p>But 130.38 in Week 2 was legitimate improvement, and Davante Adams showed what the ceiling can look like.</p>
+<p>Mike is 0-2, but he looked far more competitive this week than several teams around him.</p></td></tr>
+<tr><td class="num">8</td><td class="team">ThunderFunk</td><td class="record">0-2<br><strong>225.12 PF</strong></td><td class="why"><p>Technically more points than Cooper.</p>
+<p>But 101.46 followed by 123.66 isn&#x27;t enough to keep living off the reputation of the last two seasons.</p>
+<p>The receiver production needs to show up.</p></td></tr>
+<tr><td class="num">9</td><td class="team">WE WIN RINGS</td><td class="record">0-2<br><strong>218.76 PF</strong></td><td class="why"><p>The schedule has been brutal: <strong>334.8 points against</strong>, worst in the league.</p>
+<p>That&#x27;s important.</p>
+<p>But Lawrence also hasn&#x27;t cracked 112 points himself.</p>
+<p>Bad luck explains part of 0-2.</p>
+<p>Not all of it.</p></td></tr>
+<tr><td class="num">10</td><td class="team">Sam LaPortaPottys</td><td class="record">0-2<br><strong>206.04 PF</strong></td><td class="why"><p>Last week I ranked Josh fifth despite being 0-1 because he scored 141.92.</p>
+<p>Then he scored 64.12.</p>
+<p>I regret nothing.</p>
+<p>The algorithm is functioning properly.</p></td></tr>
+</tbody></table></div></section>
+<section id="perspective"><div class="wrap closing"><h2 class="section-title">Two Weeks In: What We Actually Know</h2>
+<p>We know Estes Park is very good.</p>
+<p>We know Sloan&#x27;s depth is real.</p>
+<p>We know Hawkeye Inside Her has enough elite firepower to bury teams when the stars align.</p>
+<p>We know Bear Force One can win pretty and can apparently win ugly.</p>
+<p>And we now know Daejon Loves probably deserved more respect than it received after the auction.</p>
+<p>After that?</p>
+<p>We&#x27;re still guessing.</p>
+<p>ThunderFunk has enough recent history that 0-2 shouldn&#x27;t trigger panic, but another bad week will turn a slow start into an actual hole.</p>
+<p>WE WIN RINGS may be considerably better than its record, though eventually the scoreboard requires evidence.</p>
+<p>Cooper Dejean Jacket finally looked competitive.</p>
+<p>Manatt took a step backward.</p>
+<p>And Sam LaPortaPottys managed to score 141.92 one week and 64.12 the next, which is perhaps the clearest possible reminder that nobody actually knows anything.</p>
+<p>Two weeks down.</p>
+<p>Twelve to go.</p>
+<p>And somewhere, Dan Welter still has $37.</p></div></section>
+</main><footer><div class="footer-links"><a href="week-1.html">← Week 1</a><a href="index.html#recaps">All recaps</a></div><p>NO PUNT INTENDED · WEEK 2 · 2026</p></footer></body></html>
