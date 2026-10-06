@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 4 Recap — No Punt Intended</title>
+<meta name="description" content="No Punt Intended Week 4 recap: matchup breakdowns, awards, receipts, and power rankings.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0c2340;
+    --bg-deep:#071627;
+    --bg-card:#123256;
+    --chalk:#f5f7fa;
+    --chalk-dim:#a9bdd4;
+    --marker:#ffc20e;
+    --marker-dim:#c99b0b;
+    --flag:#d1495b;
+    --pos:#8fbf8a;
+    --hash:rgba(245,247,250,0.14);
+    --hash-strong:rgba(245,247,250,0.28);
+    --radius:6px;
+    --display:'Anton','Arial Narrow',sans-serif;
+    --body:'Work Sans',-apple-system,sans-serif;
+    --mono:'JetBrains Mono','Courier New',monospace;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--chalk);font-family:var(--body);line-height:1.68;-webkit-font-smoothing:antialiased;}
+  a{color:var(--marker);}
+  .wrap{max-width:860px;margin:0 auto;padding:0 24px;}
+  nav{background:rgba(7,22,39,.95);border-bottom:1px solid var(--hash);padding:14px 0;position:sticky;top:0;z-index:10;backdrop-filter:blur(7px);}
+  nav .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;}
+  .nav-mark{font-family:var(--display);font-size:1.1rem;color:var(--marker);}
+  .nav-links{display:flex;gap:18px;flex-wrap:wrap;justify-content:flex-end;}
+  .nav-links a{font-family:var(--mono);font-size:.7rem;letter-spacing:1px;text-transform:uppercase;text-decoration:none;color:var(--chalk-dim);}
+  .nav-links a:hover,.nav-links a.active{color:var(--marker);}
+
+  header.hero{padding:72px 24px 54px;text-align:center;border-bottom:1px solid var(--hash);background:linear-gradient(180deg,rgba(7,22,39,.55),rgba(12,35,64,0));}
+  .eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:3px;text-transform:uppercase;color:var(--marker);margin-bottom:14px;}
+  h1{font-family:var(--display);font-size:clamp(2.5rem,7vw,4.3rem);margin:0 0 12px;letter-spacing:.5px;}
+  .dek{color:var(--chalk-dim);max-width:650px;margin:0 auto;font-size:1.05rem;}
+
+  section{padding:58px 0;border-bottom:1px solid var(--hash);}
+  h2.section-title{font-family:var(--display);font-size:2rem;letter-spacing:.4px;margin:0 0 8px;}
+  .section-sub{color:var(--chalk-dim);margin:0 0 34px;max-width:650px;}
+
+  .lead{font-size:1.05rem;}
+  .lead p{margin:0 0 18px;}
+
+  .matchup{margin-bottom:44px;padding-bottom:44px;border-bottom:1px solid var(--hash);}
+  .matchup:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none;}
+  .scoreline{font-family:var(--display);font-size:1.55rem;line-height:1.2;margin:0 0 16px;}
+  .scoreline span{color:var(--marker);}
+  .matchup p{margin:0 0 16px;font-size:.99rem;}
+  .final{font-family:var(--mono);font-size:.79rem;color:var(--marker);margin-top:18px!important;}
+  .emph{font-weight:700;color:var(--chalk);}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;}
+  .card{background:var(--bg-card);border:1px solid var(--hash);border-radius:var(--radius);padding:20px;}
+  .card .kicker{font-family:var(--display);font-size:1.12rem;color:var(--marker);margin-bottom:6px;letter-spacing:.2px;}
+  .card .winner{font-family:var(--mono);font-size:.76rem;color:var(--chalk);margin-bottom:10px;}
+  .card p{margin:0;color:var(--chalk-dim);font-size:.92rem;}
+
+  .receipt{padding:20px 0;border-bottom:1px solid var(--hash);}
+  .receipt:last-child{border-bottom:none;padding-bottom:0;}
+  .receipt h3{font-family:var(--display);font-size:1.25rem;margin:0 0 8px;}
+  .receipt p{margin:6px 0;font-size:.96rem;}
+  .label{font-family:var(--mono);font-size:.7rem;letter-spacing:.6px;text-transform:uppercase;color:var(--marker-dim);}
+
+  table.rank{width:100%;border-collapse:collapse;margin-top:10px;}
+  table.rank th{font-family:var(--mono);font-size:.68rem;letter-spacing:1px;text-transform:uppercase;color:var(--marker-dim);text-align:left;padding:10px 8px;border-bottom:1px solid var(--hash-strong);}
+  table.rank td{padding:13px 8px;border-bottom:1px solid var(--hash);font-size:.92rem;vertical-align:top;}
+  table.rank td.num{font-family:var(--mono);font-weight:700;color:var(--marker);width:42px;}
+  table.rank td.team{font-weight:700;white-space:nowrap;}
+  table.rank td.record{font-family:var(--mono);color:var(--chalk-dim);white-space:nowrap;}
+
+  .closing{font-size:1.03rem;}
+  .closing p{margin:0 0 16px;}
+  .note{font-family:var(--mono);font-size:.72rem;color:var(--chalk-dim);margin-top:20px;}
+
+  footer{padding:42px 24px;text-align:center;}
+  footer p{font-family:var(--mono);font-size:.72rem;color:var(--chalk-dim);}
+
+  @media (max-width:700px){
+    nav .wrap{align-items:flex-start;flex-direction:column;}
+    .nav-links{justify-content:flex-start;gap:12px 16px;}
+    table.rank th:nth-child(4),table.rank td:nth-child(4){display:none;}
+    table.rank td.team{white-space:normal;}
+  }
+
+  /* Week 2: preserve the Week 1 template; keep every ranking visible on mobile. */
+  .nav-mark{text-decoration:none;flex-shrink:0}
+  .nav-links a[aria-current="page"]{color:var(--marker);border-bottom:2px solid var(--marker)}
+  h3.scoreline,h3.kicker{font-weight:400}
+  .card h3.kicker{margin:0 0 6px}.card p{margin:0 0 12px}.card p:last-child{margin-bottom:0}
+  .card .winner{margin-bottom:14px}
+  table.rank th{color:var(--chalk-dim)}table.rank td.team{white-space:normal;min-width:130px}
+  table.rank td.why p{margin:0 0 12px}table.rank td.why p:last-child{margin-bottom:0}
+  table.rank td.why{width:45%}.label{color:var(--chalk-dim)}
+  .skip-link{position:absolute;top:-100px;left:12px;background:var(--marker);color:var(--bg-deep);padding:10px 16px;z-index:100}
+  .skip-link:focus{top:12px}a:focus-visible{outline:2px solid var(--marker);outline-offset:4px}
+  .section-title{line-height:1.25}.footer-links{display:flex;justify-content:center;gap:24px;font-family:var(--mono);font-size:.75rem}
+  @media(max-width:700px){
+    table.rank,table.rank tbody,table.rank tr,table.rank td{display:block;width:100%}
+    table.rank thead{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+    table.rank tr{padding:20px 0;border-bottom:1px solid var(--hash)}
+    table.rank td{border:0;padding:3px 0}table.rank td.num{width:auto}
+    table.rank td.team{font-size:1.05rem}table.rank td.why:nth-child(4){display:block;width:100%;padding-top:12px}
+    header.hero{padding:50px 24px 42px}.grid{grid-template-columns:1fr}
+  }
+  @media print{nav,.skip-link,.footer-links{display:none}body{background:#fff;color:#000}.card{background:#fff}.card p,.card .winner,table.rank td.record{color:#222}section{padding:24px 0}.card{break-inside:avoid}}
+
+
+/* Shared navigation: update all pages together for each weekly edition. */
+nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px}
+nav .nav-mark{text-decoration:none;font-family:var(--display);color:var(--marker)}
+nav .site-links{display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:18px}
+nav .site-links a,nav .site-links summary{font-family:var(--mono);font-size:.7rem;letter-spacing:1px;text-transform:uppercase;text-decoration:none;color:var(--chalk-dim)}
+nav .site-links a:hover,nav .site-links a[aria-current="page"],nav .site-links .recaps-current>summary{color:var(--marker)}
+nav .recaps-menu{position:relative}nav .recaps-menu summary{cursor:pointer;list-style:none;padding:6px 0}nav .recaps-menu summary::-webkit-details-marker{display:none}nav .recaps-menu summary::after{content:' ▾';color:var(--marker)}
+nav .recaps-menu[open] summary::after{content:' ▴'}
+nav .recaps-options{position:absolute;right:0;top:100%;min-width:180px;display:flex;flex-direction:column;gap:0;padding:8px;background:var(--bg-deep);border:1px solid var(--hash-strong);border-radius:var(--radius);box-shadow:0 10px 24px #0005;z-index:101}
+nav .recaps-options a{display:block;padding:10px 12px;white-space:nowrap}nav .recaps-options a:hover{background:var(--bg-card)}
+nav a:focus-visible,nav summary:focus-visible{outline:2px solid var(--marker);outline-offset:4px}
+section[id]{scroll-margin-top:110px}.reveal{opacity:1;transform:none}
+.recap-empty+.recap-empty{margin-top:20px}.latest-link{display:inline-block;margin:24px 0 0;padding:10px 18px;border:1px solid var(--marker);border-radius:var(--radius);color:var(--marker);text-decoration:none;font-family:var(--mono);font-size:.8rem}
+.week-results{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}.week-result{background:var(--bg-card);border:1px solid var(--hash);border-radius:var(--radius);padding:18px}.week-result p{display:flex;justify-content:space-between;gap:14px;margin:6px 0}.week-result strong{font-family:var(--mono);white-space:nowrap}.week-result .winner strong{color:var(--marker)}
+@media(max-width:700px){nav .wrap{flex-direction:column;align-items:flex-start;gap:8px}nav .site-links{justify-content:flex-start;gap:8px 16px}nav .recaps-menu{position:static}nav .recaps-options{right:24px;left:auto;top:100%}section[id]{scroll-margin-top:160px}.scorebug{max-width:100%}.scorebug .info{min-width:0}.scorebug .tag{flex-shrink:0}}
+
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to recap</a>
+<nav aria-label="Main navigation"><div class="wrap"><a class="nav-mark" href="index.html" aria-label="No Punt Intended home">NPI</a><div class="site-links"><a href="index.html">Home</a><a href="preseason.html">Preseason</a><a href="index.html#standings">Standings</a><a href="index.html#rules">Rules</a><details class="recaps-menu recaps-current"><summary>Recaps</summary><div class="recaps-options"><a href="week-4.html" aria-current="page">Week 4</a><a href="week-3.html">Week 3</a><a href="week-2.html">Week 2</a><a href="week-1.html">Week 1</a><a href="index.html#recaps">All recaps</a></div></details></div></div></nav>
+<header class="hero"><div class="eyebrow">REGULAR SEASON · WEEK 4</div><h1>Better Lucky Than 1–3</h1><p class="dek">Sloan brings the fireworks. Estes brings a very cooperative opponent. Week 5 puts both unbeaten teams in the same room.</p></header><main id="main"><section id="opening"><div class="wrap"><h2 class="section-title">Four Weeks, Two Perfect Records</h2><p>Sloan scored <strong>205.92</strong>. Estes Park scored <strong>109.14</strong>. Both are 4-0. Fantasy football remains a deeply unserious accounting system.</p><p>Eric takes over first place and the season scoring lead with 647.38 points. Jon stays unbeaten after beating the only opponent who scored less than him besides Manatt.</p><p>Estes would have gone <strong>2-7 against the full Week 4 field</strong>. Fortunately, the league only asked him to play Cooper. The championship pedigree is real. So was this week’s horseshoe.</p><p>Bear Force One rebounded, WE WIN RINGS won again, and ThunderFunk finally got off zero. Sam LaPortaPottys scored 141.58 and still lost. Some managers get schedule luck. Josh gets character development.</p></div></section><section id="matchups"><div class="wrap"><h2 class="section-title">Week 4 Matchups</h2><article class="matchup"><h3 class="scoreline">Estes Park Rangers <span>109.14</span> · Cooper Dejean Jacket <span>100.98</span></h3><p>An 8.16-point escape. After three weeks of at least 159.40, Estes won with the third-lowest score in the league. Jon is welcome to call this veteran composure. The rest of us are calling it a very fortunate calendar appointment.</p><p>Chris Olave led Estes with 19.6, Ashton Jeanty added 18.6 and Jahmyr Gibbs 17.7. Parker Washington and Dalton Kincaid combined for 3.7. Not exactly a parade.</p><p>Cooper got 17.0 from George Kittle and 16.2 from Jameson Williams, but Matthew Stafford managed 9.68 and Courtland Sutton 1.4. Kyle Monangai’s 28.0 sat on the bench while Cam Skattebo started for 7.6. A straight swap would have changed the result; hindsight remains undefeated.</p><p>Estes is 4-0. Cooper is 1-3. The trophy does not have a column for how politely the schedule treated you.</p><p class="final">Final: Estes Park Rangers 109.14, Cooper Dejean Jacket 100.98</p></article><article class="matchup"><h3 class="scoreline">Bear Force One <span>150.72</span> · Daejon Loves <span>118.38</span></h3><p>Tetairoa McMillan scored <strong>45.2</strong>. Sometimes the recap can begin and end with one receiver informing everyone that he has plans.</p><p>Bijan Robinson added 27.7, Josh Allen 18.52 and Rhamondre Stevenson 18.4. Bear’s slide from 154.16 to 122.02 to 110.86 ended with a convincing 150.72 and a 32.34-point win.</p><p>Dan got 20.48 from Jared Goff, 16.5 from Michael Wilson and 16.3 from James Cook. Travis Kelce supplied 3.5. After back-to-back weekly scoring titles, 118.38 was a less persuasive argument for leaving $37 at the auction.</p><p>Daejon Loves still ranks third in season scoring at 566.32. The unused-money joke survives. The scoring streak does not.</p><p class="final">Final: Bear Force One 150.72, Daejon Loves 118.38</p></article><article class="matchup"><h3 class="scoreline">Sloan <span>205.92</span> · Hawkeye Inside Her <span>118.02</span></h3><p>Sloan won by <strong>87.90</strong>. That is a matchup margin with its own mailing address.</p><p>CeeDee Lamb scored 41.3, Puka Nacua 27.7, Zay Flowers 25.8 and Sam LaPorta 22.4. Those four combined for 117.2—just 0.82 shy of Hawkeye’s entire lineup.</p><p>Brock Purdy added 19.62, Chase Brown 19.1 and Jake Bates 18.0. Sloan had no starter below 8.7. Depth was the preseason selling point; this was the product demonstration.</p><p>Joe Burrow scored 23.72 and Jonathan Taylor 22.7 for Hawkeye, but Ja’Marr Chase managed 5.7. Josh Downs and Jake Ferguson combined for 8.7. Hawkeye falls to 2-2 after consecutive losses; Eric moves to 4-0 and first place.</p><p class="final">Final: Sloan 205.92, Hawkeye Inside Her 118.02</p></article><article class="matchup"><h3 class="scoreline">WE WIN RINGS <span>127.88</span> · Manatt Mixers <span>104.12</span></h3><p>Lawrence has discovered that winning twice is even more enjoyable than winning once.</p><p>Tee Higgins supplied 26.7, Alvin Kamara 22.8 and Quinshon Judkins 21.6. Ka’imi Fairbairn added 16.0. WE WIN RINGS survived Breece Hall’s zero and DJ Moore’s 2.7 to win by 23.76.</p><p>Javonte Williams did his part for Manatt with 31.3. Rashee Rice supplied zero, Garrett Wilson 5.7 and the Chiefs defense 1.0. Malik Nabers’ 23.2 and T.J. Hockenson’s 24.9 remained on the bench.</p><p>The Mixers have lost three straight. Lawrence is back to .500. The team name is gradually becoming less awkward to say aloud.</p><p class="final">Final: WE WIN RINGS 127.88, Manatt Mixers 104.12</p></article><article class="matchup"><h3 class="scoreline">ThunderFunk <span>168.10</span> · Sam LaPortaPottys <span>141.58</span></h3><p>ThunderFunk’s weekly scores now read <strong>101.46, 123.66, 133.24, 168.10</strong>. Four straight improvements, finally accompanied by a win.</p><p>Kenneth Walker III led with 30.9, Emanuel Wilson added 27.0, Chuba Hubbard 25.9 and Brock Bowers 20.6. This week Tom actually used the big tight-end score. Organizational learning is beautiful.</p><p>Josh got 36.7 from Kyren Williams, 30.8 from Nico Collins and 21.5 from Carnell Tate. Sam LaPortaPottys’ 141.58 was fourth-best in the league—and still a 26.52-point loss.</p><p>Saquon Barkley scored 2.0, David Montgomery 4.3 and TreVeyon Henderson 4.2. The winless record survives, but this offense gave Josh something better than another injury report to stare at.</p><p class="final">Final: ThunderFunk 168.10, Sam LaPortaPottys 141.58</p></article></div></section><section id="awards"><div class="wrap"><h2 class="section-title">Week 4 Awards</h2><div class="grid"><article class="card"><h3 class="kicker">The Scoreboard Stress Test</h3><div class="winner">Sloan — 205.92</div><p>Highest score of Week 4. A new season scoring leader, with enthusiasm.</p></article><article class="card"><h3 class="kicker">The Horseshoe Keeper</h3><div class="winner">Estes Park Rangers</div><p>109.14 would have lost to seven teams. Jon found one of the other two. Keep the lucky socks away from the laundry.</p></article><article class="card"><h3 class="kicker">The One-Man Air Show</h3><div class="winner">Tetairoa McMillan — 45.2</div><p>The week’s biggest starting-player score, powering Bear’s rebound.</p></article><article class="card"><h3 class="kicker">Best Performance in a Loss</h3><div class="winner">Sam LaPortaPottys — 141.58</div><p>Fourth-highest score. Still 0-4. The schedule has refused to take customer-service calls.</p></article><article class="card"><h3 class="kicker">The Finally Award</h3><div class="winner">ThunderFunk — 168.10</div><p>First win, second-highest weekly score. Tom has officially joined the season.</p></article><article class="card"><h3 class="kicker">The Hindsight Department</h3><div class="winner">Kyle Monangai — Cooper’s bench</div><p>28.0 unused in an 8.16-point loss. A receipt nobody wanted.</p></article></div></div></section><section id="receipts"><div class="wrap"><h2 class="section-title">Receipts — Week 4</h2><article class="receipt"><h3>Estes: the 0.28-point crisis has escalated</h3><p>Week 3’s 159.40 became 109.14: a 50.26-point drop. This time the decline is bigger than a rounding error. The record remains suspiciously pristine.</p></article><article class="receipt"><h3>Sloan: receiver depth enters evidence</h3><p>The preseason praised the receivers. Lamb, Nacua and Flowers combined for 94.8 this week. The prosecution rests.</p></article><article class="receipt"><h3>Bear: trend reversed</h3><p>Last week’s falling-score concern was fair. This week’s 150.72 is a compelling response. McMillan’s 45.2 helped considerably.</p></article><article class="receipt"><h3>Dan: the $37 program takes a week off</h3><p>The manager who led Weeks 2 and 3 scored 118.38 and lost. Still third in total points; the budget jokes are not a financial model.</p></article><article class="receipt"><h3>ThunderFunk: improvement finally counts</h3><p>Four straight increases in weekly scoring. One actual win. The standings have finally acknowledged the paperwork.</p></article></div></section><section id="power-rankings"><div class="wrap"><h2 class="section-title">Power Rankings</h2><p class="section-sub">After Week 4 · Editorial rankings; the homepage carries the official standings.</p><table class="rank"><thead><tr><th scope="col">#</th><th scope="col">Team</th><th scope="col">Record / PF</th><th scope="col">Why</th></tr></thead><tbody><tr><td class="num">1</td><td class="team">Sloan</td><td class="record">4-0<br>647.38 PF</td><td class="why"><p>205.92, first place and the season scoring lead. The clearest case for No. 1.</p></td></tr><tr><td class="num">2</td><td class="team">Estes Park Rangers</td><td class="record">4-0<br>605.34 PF</td><td class="why"><p>Still 4-0 and second in points. One lucky escape tempers the coronation; it does not erase three strong weeks.</p></td></tr><tr><td class="num">3</td><td class="team">Bear Force One</td><td class="record">3-1<br>537.76 PF</td><td class="why"><p>150.72, a 3-1 record and a revived offense move Bear back into the contender conversation.</p></td></tr><tr><td class="num">4</td><td class="team">Daejon Loves</td><td class="record">2-2<br>566.32 PF</td><td class="why"><p>Third in total scoring despite the loss. Two big weeks still count; so does this quieter one.</p></td></tr><tr><td class="num">5</td><td class="team">ThunderFunk</td><td class="record">1-3<br>526.46 PF</td><td class="why"><p>168.10 and four straight scoring increases. The 1-3 record understates the current offense.</p></td></tr><tr><td class="num">6</td><td class="team">Hawkeye Inside Her</td><td class="record">2-2<br>522.34 PF</td><td class="why"><p>Two straight scores near 118 and two losses. The star power remains; the recent results need work.</p></td></tr><tr><td class="num">7</td><td class="team">WE WIN RINGS</td><td class="record">2-2<br>463.28 PF</td><td class="why"><p>Two straight wins and improving scores. Eighth in season points keeps the enthusiasm measured.</p></td></tr><tr><td class="num">8</td><td class="team">Manatt Mixers</td><td class="record">1-3<br>495.28 PF</td><td class="why"><p>Three straight losses, but 495.28 season points and last week’s strong showing keep this above the bottom tier.</p></td></tr><tr><td class="num">9</td><td class="team">Cooper Dejean Jacket</td><td class="record">1-3<br>464.06 PF</td><td class="why"><p>100.98 followed a promising Week 3. Ninth in points and a painful missed bench opportunity.</p></td></tr><tr><td class="num">10</td><td class="team">Sam LaPortaPottys</td><td class="record">0-4<br>430.78 PF</td><td class="why"><p>141.58 is real progress. Lowest total points and an 0-4 record still leave work to do.</p></td></tr></tbody></table></div></section><section id="week-5"><div class="wrap"><h2 class="section-title">Week 5 Look-Ahead</h2><p class="section-sub">Matchups and projections from the uploaded schedule. Projections are a screenshot snapshot and can change with lineup moves.</p><article class="receipt"><h3>Sloan (4-0) vs. Estes Park Rangers (4-0)</h3><p>The last two undefeated teams meet. Eric arrives off 205.92; Jon arrives off an escape hatch. Somebody’s perfect record is on the line. Screenshot projections: Sloan 143.8, Estes 146.8. A three-point projection gap is not a forecast of destiny.</p></article><article class="receipt"><h3>Cooper Dejean Jacket (1-3) vs. Daejon Loves (2-2)</h3><p>Both need a response after Week 4 losses. Cooper would appreciate having the points in the starting lineup this time. Screenshot projections: Cooper 120.3, Daejon 130.5.</p></article><article class="receipt"><h3>WE WIN RINGS (2-2) vs. Bear Force One (3-1)</h3><p>Lawrence seeks a third straight win; Bear wants to sustain the rebound. Screenshot projections: RINGS 107.3, Bear 109.3.</p></article><article class="receipt"><h3>Sam LaPortaPottys (0-4) vs. Hawkeye Inside Her (2-2)</h3><p>Josh needs a first win. David needs to stop a two-game slide. One team gets relief if the matchup finishes without a tie. Screenshot projections: Sam 114.3, Hawkeye 133.5.</p></article><article class="receipt"><h3>ThunderFunk (1-3) vs. Manatt Mixers (1-3)</h3><p>Tom has momentum; Jon Manatt has a three-game losing streak. Both have a chance to climb out of the 1-3 crowd. Screenshot projections: ThunderFunk 80.2, Manatt 133.0. ThunderFunk had only seven players listed as yet to play; treat that snapshot as incomplete lineup context.</p></article></div></section><section id="perspective"><div class="wrap"><h2 class="section-title">The Schedule Stops Doing Favors</h2><p>Sloan and Estes are still unbeaten. Next week, they play each other. The schedule that spared Jon this week has developed a sense of humor.</p><p>Eric has the points lead. Jon has the defending-champion credentials and, apparently, an excellent relationship with luck. Week 5 should provide a useful performance review.</p></div></section></main><footer><div class="footer-links"><a href="week-3.html">← Week 3</a><a href="index.html#recaps">All recaps</a></div><p>NO PUNT INTENDED · WEEK 4 · 2026</p></footer><script>
+// Native details supports mouse, touch, and keyboard without depending on JavaScript.
+document.addEventListener('click',function(event){document.querySelectorAll('.recaps-menu[open]').forEach(function(menu){if(!menu.contains(event.target))menu.open=false;});});
+document.addEventListener('keydown',function(event){if(event.key==='Escape'){document.querySelectorAll('.recaps-menu[open]').forEach(function(menu){menu.open=false;menu.querySelector('summary').focus();});}});
+</script></body></html>
